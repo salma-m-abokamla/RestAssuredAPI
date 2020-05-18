@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-testBeforeSuite">
+              <span class="suite-name border-failed">testBeforeSuite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-testBeforeSuite">
+                    <span>C:\Users\ElMetwally2S\Downloads\UK_UI2\RestAssuredDemo\testng.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-testBeforeSuite">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-testBeforeSuite">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-testBeforeSuite">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-testBeforeSuite">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-testBeforeSuite">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-testBeforeSuite">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">21 methods, 2 failed,   19 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-testBeforeSuite" class="hide-methods failed suite-testBeforeSuite"> (hide)</a> <!-- hide-methods failed suite-testBeforeSuite -->
+                      <a href="#" panel-name="suite-testBeforeSuite" class="show-methods failed suite-testBeforeSuite"> (show)</a> <!-- show-methods failed suite-testBeforeSuite -->
+                    </span>
+                    <div class="method-list-content failed suite-testBeforeSuite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-testBeforeSuite" title="RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs" hash-for-method="ValidatGetSubscriptionsListApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/accounts, 447386011953)">ValidatGetSubscriptionsListApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/accounts, 447386011953)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-testBeforeSuite" title="RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs" hash-for-method="ValidateVeryMeApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/veryMeOffers, 447386011953)">ValidateVeryMeApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/veryMeOffers, 447386011953)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-testBeforeSuite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-testBeforeSuite" class="hide-methods passed suite-testBeforeSuite"> (hide)</a> <!-- hide-methods passed suite-testBeforeSuite -->
+                      <a href="#" panel-name="suite-testBeforeSuite" class="show-methods passed suite-testBeforeSuite"> (show)</a> <!-- show-methods passed suite-testBeforeSuite -->
+                    </span>
+                    <div class="method-list-content passed suite-testBeforeSuite">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-testBeforeSuite" title="RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs" hash-for-method="ValidatGetAccountsApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/accounts, 447386011953)">ValidatGetAccountsApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/accounts, 447386011953)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-testBeforeSuite" title="RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs" hash-for-method="ValidateAdditionalChargesApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/additionalCharges, 447386011953)">ValidateAdditionalChargesApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/additionalCharges, 447386011953)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-testBeforeSuite" title="RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs" hash-for-method="ValidateAppConfigApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/appconfig, 447386011953)">ValidateAppConfigApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/appconfig, 447386011953)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-testBeforeSuite" title="RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs" hash-for-method="ValidateBillHistoryApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/billHistory, 447386011953)">ValidateBillHistoryApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/billHistory, 447386011953)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-testBeforeSuite" title="RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs" hash-for-method="ValidateCurrentChargesApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/currentCharges, 447386011953)">ValidateCurrentChargesApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/currentCharges, 447386011953)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-testBeforeSuite" title="RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs" hash-for-method="ValidateDashboardApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v4/dashboard, 447386011953)">ValidateDashboardApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v4/dashboard, 447386011953)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-testBeforeSuite" title="RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs" hash-for-method="ValidateDiscoverApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/discover, 447386011953)">ValidateDiscoverApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/discover, 447386011953)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-testBeforeSuite" title="RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs" hash-for-method="ValidateExtrasApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/extras, 447386011953)">ValidateExtrasApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/extras, 447386011953)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-testBeforeSuite" title="RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs" hash-for-method="ValidateHanSoloApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/testHansolo, 447386011953)">ValidateHanSoloApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/testHansolo, 447386011953)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-testBeforeSuite" title="RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs" hash-for-method="ValidatePasswordLoginApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v2/passwordLogin, 447386011953, DNU_...)">ValidatePasswordLoginApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v2/passwordLogin, 447386011953, DNU_...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-testBeforeSuite" title="RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs" hash-for-method="ValidatePlanApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/plan, 447386011953)">ValidatePlanApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/plan, 447386011953)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-testBeforeSuite" title="RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs" hash-for-method="ValidateProductsAndServicesApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/productsAndServices, 447386011953)">ValidateProductsAndServicesApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/productsAndServices, 447386011953)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-testBeforeSuite" title="RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs" hash-for-method="ValidateSegmentApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/segment, 447386011953)">ValidateSegmentApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/segment, 447386011953)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-testBeforeSuite" title="RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs" hash-for-method="ValidateSoftTokenApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v2/softToken, 447386011953)">ValidateSoftTokenApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v2/softToken, 447386011953)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-testBeforeSuite" title="RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs" hash-for-method="ValidateSubsConfigWithSegmentApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/subsConfig, 447386011953)">ValidateSubsConfigWithSegmentApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/subsConfig, 447386011953)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-testBeforeSuite" title="RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs" hash-for-method="ValidateSubsConfigWithoutSegmentApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/subsConfig, 447386011953)">ValidateSubsConfigWithoutSegmentApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/subsConfig, 447386011953)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-testBeforeSuite" title="RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs" hash-for-method="ValidateUpgradesApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/upgrades, 447386011953)">ValidateUpgradesApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/upgrades, 447386011953)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-testBeforeSuite" title="RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs" hash-for-method="ValidateUsagesApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/usages, 447386011953)">ValidateUsagesApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/usages, 447386011953)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-testBeforeSuite" title="RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs" hash-for-method="ValidateVOVApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/vov, 447386011953)">ValidateVOVApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/vov, 447386011953)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-testBeforeSuite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-testBeforeSuite" class="panel testBeforeSuite">
+          <div class="suite-testBeforeSuite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="ValidatGetSubscriptionsListApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/accounts, 447386011953)">
+                  </a> <!-- ValidatGetSubscriptionsListApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/accounts, 447386011953) -->
+                  <span class="method-name">ValidatGetSubscriptionsListApiStatus</span>
+                  <span class="parameters">(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/accounts, 447386011953)</span>
+                  <div class="stack-trace">java.lang.IllegalArgumentException: Header value cannot be null
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:55)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.header(RequestSpecificationImpl.groovy:843)
+	at RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs.ValidatGetSubscriptionsListApiStatus(ValidateMVA10APIs.java:412)
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="ValidateVeryMeApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/veryMeOffers, 447386011953)">
+                  </a> <!-- ValidateVeryMeApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/veryMeOffers, 447386011953) -->
+                  <span class="method-name">ValidateVeryMeApiStatus</span>
+                  <span class="parameters">(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/veryMeOffers, 447386011953)</span>
+                  <div class="stack-trace">java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;401&gt;.
+
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:193)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:61)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:126)
+	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:134)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at io.restassured.internal.ValidatableResponseImpl.super$2$statusCode(ValidatableResponseImpl.groovy)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1262)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
+	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy:142)
+	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy)
+	at RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs.ValidateVeryMeApiStatus(ValidateMVA10APIs.java:177)
+... Removed 40 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-testBeforeSuite-class-failed -->
+          <div class="suite-testBeforeSuite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="ValidatGetAccountsApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/accounts, 447386011953)">
+                  </a> <!-- ValidatGetAccountsApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/accounts, 447386011953) -->
+                  <span class="method-name">ValidatGetAccountsApiStatus</span>
+                  <span class="parameters">(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/accounts, 447386011953)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="ValidateAdditionalChargesApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/additionalCharges, 447386011953)">
+                  </a> <!-- ValidateAdditionalChargesApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/additionalCharges, 447386011953) -->
+                  <span class="method-name">ValidateAdditionalChargesApiStatus</span>
+                  <span class="parameters">(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/additionalCharges, 447386011953)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="ValidateAppConfigApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/appconfig, 447386011953)">
+                  </a> <!-- ValidateAppConfigApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/appconfig, 447386011953) -->
+                  <span class="method-name">ValidateAppConfigApiStatus</span>
+                  <span class="parameters">(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/appconfig, 447386011953)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="ValidateBillHistoryApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/billHistory, 447386011953)">
+                  </a> <!-- ValidateBillHistoryApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/billHistory, 447386011953) -->
+                  <span class="method-name">ValidateBillHistoryApiStatus</span>
+                  <span class="parameters">(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/billHistory, 447386011953)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="ValidateCurrentChargesApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/currentCharges, 447386011953)">
+                  </a> <!-- ValidateCurrentChargesApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/currentCharges, 447386011953) -->
+                  <span class="method-name">ValidateCurrentChargesApiStatus</span>
+                  <span class="parameters">(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/currentCharges, 447386011953)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="ValidateDashboardApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v4/dashboard, 447386011953)">
+                  </a> <!-- ValidateDashboardApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v4/dashboard, 447386011953) -->
+                  <span class="method-name">ValidateDashboardApiStatus</span>
+                  <span class="parameters">(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v4/dashboard, 447386011953)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="ValidateDiscoverApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/discover, 447386011953)">
+                  </a> <!-- ValidateDiscoverApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/discover, 447386011953) -->
+                  <span class="method-name">ValidateDiscoverApiStatus</span>
+                  <span class="parameters">(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/discover, 447386011953)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="ValidateExtrasApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/extras, 447386011953)">
+                  </a> <!-- ValidateExtrasApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/extras, 447386011953) -->
+                  <span class="method-name">ValidateExtrasApiStatus</span>
+                  <span class="parameters">(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/extras, 447386011953)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="ValidateHanSoloApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/testHansolo, 447386011953)">
+                  </a> <!-- ValidateHanSoloApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/testHansolo, 447386011953) -->
+                  <span class="method-name">ValidateHanSoloApiStatus</span>
+                  <span class="parameters">(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/testHansolo, 447386011953)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="ValidatePasswordLoginApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v2/passwordLogin, 447386011953, DNU_...)">
+                  </a> <!-- ValidatePasswordLoginApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v2/passwordLogin, 447386011953, DNU_...) -->
+                  <span class="method-name">ValidatePasswordLoginApiStatus</span>
+                  <span class="parameters">(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v2/passwordLogin, 447386011953, DNU_S2_7000330528)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="ValidatePlanApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/plan, 447386011953)">
+                  </a> <!-- ValidatePlanApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/plan, 447386011953) -->
+                  <span class="method-name">ValidatePlanApiStatus</span>
+                  <span class="parameters">(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/plan, 447386011953)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="ValidateProductsAndServicesApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/productsAndServices, 447386011953)">
+                  </a> <!-- ValidateProductsAndServicesApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/productsAndServices, 447386011953) -->
+                  <span class="method-name">ValidateProductsAndServicesApiStatus</span>
+                  <span class="parameters">(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/productsAndServices, 447386011953)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="ValidateSegmentApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/segment, 447386011953)">
+                  </a> <!-- ValidateSegmentApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/segment, 447386011953) -->
+                  <span class="method-name">ValidateSegmentApiStatus</span>
+                  <span class="parameters">(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/segment, 447386011953)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="ValidateSoftTokenApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v2/softToken, 447386011953)">
+                  </a> <!-- ValidateSoftTokenApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v2/softToken, 447386011953) -->
+                  <span class="method-name">ValidateSoftTokenApiStatus</span>
+                  <span class="parameters">(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v2/softToken, 447386011953)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="ValidateSubsConfigWithSegmentApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/subsConfig, 447386011953)">
+                  </a> <!-- ValidateSubsConfigWithSegmentApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/subsConfig, 447386011953) -->
+                  <span class="method-name">ValidateSubsConfigWithSegmentApiStatus</span>
+                  <span class="parameters">(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/subsConfig, 447386011953)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="ValidateSubsConfigWithoutSegmentApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/subsConfig, 447386011953)">
+                  </a> <!-- ValidateSubsConfigWithoutSegmentApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/subsConfig, 447386011953) -->
+                  <span class="method-name">ValidateSubsConfigWithoutSegmentApiStatus</span>
+                  <span class="parameters">(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/subsConfig, 447386011953)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="ValidateUpgradesApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/upgrades, 447386011953)">
+                  </a> <!-- ValidateUpgradesApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/upgrades, 447386011953) -->
+                  <span class="method-name">ValidateUpgradesApiStatus</span>
+                  <span class="parameters">(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/upgrades, 447386011953)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="ValidateUsagesApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/usages, 447386011953)">
+                  </a> <!-- ValidateUsagesApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/usages, 447386011953) -->
+                  <span class="method-name">ValidateUsagesApiStatus</span>
+                  <span class="parameters">(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/usages, 447386011953)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="ValidateVOVApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/vov, 447386011953)">
+                  </a> <!-- ValidateVOVApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/vov, 447386011953) -->
+                  <span class="method-name">ValidateVOVApiStatus</span>
+                  <span class="parameters">(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/vov, 447386011953)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-testBeforeSuite-class-passed -->
+        </div> <!-- panel testBeforeSuite -->
+        <div panel-name="test-xml-testBeforeSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\ElMetwally2S\Downloads\UK_UI2\RestAssuredDemo\testng.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;testBeforeSuite&quot;&gt;
+  &lt;parameter name=&quot;vovResoureURL&quot; value=&quot;/app/api/v1/vov&quot;/&gt;
+  &lt;parameter name=&quot;subsConfigResoureURL&quot; value=&quot;/app/api/v1/subsConfig&quot;/&gt;
+  &lt;parameter name=&quot;currentChargesResoureURL&quot; value=&quot;/app/api/v1/currentCharges&quot;/&gt;
+  &lt;parameter name=&quot;additionalChargesResoureURL&quot; value=&quot;/app/api/v1/additionalCharges&quot;/&gt;
+  &lt;parameter name=&quot;billHistoryResoureURL&quot; value=&quot;/app/api/v1/billHistory&quot;/&gt;
+  &lt;parameter name=&quot;usagesResoureURL&quot; value=&quot;/app/api/v1/usages&quot;/&gt;
+  &lt;parameter name=&quot;passwordLoginResoureURL&quot; value=&quot;/app/api/v2/passwordLogin&quot;/&gt;
+  &lt;parameter name=&quot;upgradesResoureURL&quot; value=&quot;/app/api/v1/upgrades&quot;/&gt;
+  &lt;parameter name=&quot;dashboardResoureURL&quot; value=&quot;/app/api/v4/dashboard&quot;/&gt;
+  &lt;parameter name=&quot;veryMeOffersResoureURL&quot; value=&quot;/app/api/v1/veryMeOffers&quot;/&gt;
+  &lt;parameter name=&quot;subscription&quot; value=&quot;447386011953&quot;/&gt;
+  &lt;parameter name=&quot;userName&quot; value=&quot;DNU_S2_7000330528&quot;/&gt;
+  &lt;parameter name=&quot;extrasResoureURL&quot; value=&quot;/app/api/v1/extras&quot;/&gt;
+  &lt;parameter name=&quot;baseURL&quot; value=&quot;https://mvax.dx-int1-common.digital.vodafoneaws.co.uk&quot;/&gt;
+  &lt;parameter name=&quot;softTokenResoureURL&quot; value=&quot;/app/api/v2/softToken&quot;/&gt;
+  &lt;parameter name=&quot;hansoloResoureURL&quot; value=&quot;/app/api/v1/testHansolo&quot;/&gt;
+  &lt;parameter name=&quot;accountsResoureURL&quot; value=&quot;/app/api/v1/accounts&quot;/&gt;
+  &lt;parameter name=&quot;appConfigResoureURL&quot; value=&quot;/app/api/v1/appconfig&quot;/&gt;
+  &lt;parameter name=&quot;discoverResoureURL&quot; value=&quot;/app/api/v1/discover&quot;/&gt;
+  &lt;parameter name=&quot;segmentResoureURL&quot; value=&quot;/app/api/v1/segment&quot;/&gt;
+  &lt;parameter name=&quot;productsAndServicesResoureURL&quot; value=&quot;/app/api/v1/productsAndServices&quot;/&gt;
+  &lt;parameter name=&quot;planResoureURL&quot; value=&quot;/app/api/v1/plan&quot;/&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Test --&gt;
+&lt;/suite&gt; &lt;!-- testBeforeSuite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-testBeforeSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for testBeforeSuite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Test (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-testBeforeSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for testBeforeSuite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-testBeforeSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for testBeforeSuite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_testBeforeSuite');
+function tableData_testBeforeSuite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(21);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'ValidateAppConfigApiStatus')
+data.setCell(0, 2, 'RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs')
+data.setCell(0, 3, 3073);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'ValidatePasswordLoginApiStatus')
+data.setCell(1, 2, 'RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs')
+data.setCell(1, 3, 2360);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'ValidateUpgradesApiStatus')
+data.setCell(2, 2, 'RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs')
+data.setCell(2, 3, 2241);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'ValidateDiscoverApiStatus')
+data.setCell(3, 2, 'RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs')
+data.setCell(3, 3, 2150);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'ValidatePlanApiStatus')
+data.setCell(4, 2, 'RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs')
+data.setCell(4, 3, 2037);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'ValidateDashboardApiStatus')
+data.setCell(5, 2, 'RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs')
+data.setCell(5, 3, 1594);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'ValidateBillHistoryApiStatus')
+data.setCell(6, 2, 'RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs')
+data.setCell(6, 3, 1406);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'ValidateHanSoloApiStatus')
+data.setCell(7, 2, 'RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs')
+data.setCell(7, 3, 1329);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'ValidatGetAccountsApiStatus')
+data.setCell(8, 2, 'RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs')
+data.setCell(8, 3, 1012);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'ValidateVeryMeApiStatus')
+data.setCell(9, 2, 'RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs')
+data.setCell(9, 3, 880);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'ValidateSubsConfigWithSegmentApiStatus')
+data.setCell(10, 2, 'RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs')
+data.setCell(10, 3, 809);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'ValidateVOVApiStatus')
+data.setCell(11, 2, 'RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs')
+data.setCell(11, 3, 799);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'ValidateAdditionalChargesApiStatus')
+data.setCell(12, 2, 'RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs')
+data.setCell(12, 3, 756);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'ValidateProductsAndServicesApiStatus')
+data.setCell(13, 2, 'RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs')
+data.setCell(13, 3, 755);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'ValidateExtrasApiStatus')
+data.setCell(14, 2, 'RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs')
+data.setCell(14, 3, 750);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'ValidateCurrentChargesApiStatus')
+data.setCell(15, 2, 'RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs')
+data.setCell(15, 3, 746);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'ValidateSoftTokenApiStatus')
+data.setCell(16, 2, 'RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs')
+data.setCell(16, 3, 727);
+data.setCell(17, 0, 17)
+data.setCell(17, 1, 'ValidateUsagesApiStatus')
+data.setCell(17, 2, 'RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs')
+data.setCell(17, 3, 719);
+data.setCell(18, 0, 18)
+data.setCell(18, 1, 'ValidateSegmentApiStatus')
+data.setCell(18, 2, 'RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs')
+data.setCell(18, 3, 668);
+data.setCell(19, 0, 19)
+data.setCell(19, 1, 'ValidateSubsConfigWithoutSegmentApiStatus')
+data.setCell(19, 2, 'RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs')
+data.setCell(19, 3, 655);
+data.setCell(20, 0, 20)
+data.setCell(20, 1, 'ValidatGetSubscriptionsListApiStatus')
+data.setCell(20, 2, 'RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs')
+data.setCell(20, 3, 5);
+window.suiteTableData['testBeforeSuite']= { tableData: data, tableDiv: 'times-div-testBeforeSuite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 25 seconds</span>
+              <div id="times-div-testBeforeSuite">
+              </div> <!-- times-div-testBeforeSuite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-testBeforeSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for testBeforeSuite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-testBeforeSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-testBeforeSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod(public void RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs.ValidateAppConfigApiStatus(java.lang.S...)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">ValidateAppConfigApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/appconfig, 447386011953)</span>
+                <span class="method-start">106 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=ValidateAppConfigApiStatus status=SUCCESS method=ValidateMVA10APIs.ValidateAppConfi...)</span>
+                <span class="method-start">3181 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod(public void RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs.ValidateHanSoloApiStatus(java.lang.Str...)</span>
+                <span class="method-start">3394 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">ValidateHanSoloApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/testHansolo, 447386011953)</span>
+                <span class="method-start">3394 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=ValidateHanSoloApiStatus status=SUCCESS method=ValidateMVA10APIs.ValidateHanSoloApi...)</span>
+                <span class="method-start">4724 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod(public void RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs.ValidateSoftTokenApiStatus(java.lang.S...)</span>
+                <span class="method-start">4768 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">ValidateSoftTokenApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v2/softToken, 447386011953)</span>
+                <span class="method-start">4769 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=ValidateSoftTokenApiStatus status=SUCCESS method=ValidateMVA10APIs.ValidateSoftToke...)</span>
+                <span class="method-start">5497 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod(public void RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs.ValidateSegmentApiStatus(java.lang.Str...)</span>
+                <span class="method-start">5525 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">ValidateSegmentApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/segment, 447386011953)</span>
+                <span class="method-start">5526 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=ValidateSegmentApiStatus status=SUCCESS method=ValidateMVA10APIs.ValidateSegmentApi...)</span>
+                <span class="method-start">6195 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod(public void RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs.ValidateSubsConfigWithoutSegmentApiSta...)</span>
+                <span class="method-start">6225 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">ValidateSubsConfigWithoutSegmentApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/subsConfig, 447386011953)</span>
+                <span class="method-start">6226 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=ValidateSubsConfigWithoutSegmentApiStatus status=SUCCESS method=ValidateMVA10APIs.V...)</span>
+                <span class="method-start">6882 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod(public void RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs.ValidateDashboardApiStatus(java.lang.S...)</span>
+                <span class="method-start">6914 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">ValidateDashboardApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v4/dashboard, 447386011953)</span>
+                <span class="method-start">6914 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=ValidateDashboardApiStatus status=SUCCESS method=ValidateMVA10APIs.ValidateDashboar...)</span>
+                <span class="method-start">8510 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod(public void RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs.ValidateSubsConfigWithSegmentApiStatus...)</span>
+                <span class="method-start">8536 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">ValidateSubsConfigWithSegmentApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/subsConfig, 447386011953)</span>
+                <span class="method-start">8537 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=ValidateSubsConfigWithSegmentApiStatus status=SUCCESS method=ValidateMVA10APIs.Vali...)</span>
+                <span class="method-start">9347 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod(public void RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs.ValidateVeryMeApiStatus(java.lang.Stri...)</span>
+                <span class="method-start">9375 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">ValidateVeryMeApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/veryMeOffers, 447386011953)</span>
+                <span class="method-start">9375 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=ValidateVeryMeApiStatus status=FAILURE method=ValidateMVA10APIs.ValidateVeryMeApiSt...)</span>
+                <span class="method-start">10260 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod(public void RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs.ValidateDiscoverApiStatus(java.lang.St...)</span>
+                <span class="method-start">10290 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">ValidateDiscoverApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/discover, 447386011953)</span>
+                <span class="method-start">10290 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=ValidateDiscoverApiStatus status=SUCCESS method=ValidateMVA10APIs.ValidateDiscoverA...)</span>
+                <span class="method-start">12441 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod(public void RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs.ValidateProductsAndServicesApiStatus(j...)</span>
+                <span class="method-start">12475 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">ValidateProductsAndServicesApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/productsAndServices, 447386011953)</span>
+                <span class="method-start">12476 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=ValidateProductsAndServicesApiStatus status=SUCCESS method=ValidateMVA10APIs.Valida...)</span>
+                <span class="method-start">13234 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod(public void RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs.ValidateBillHistoryApiStatus(java.lang...)</span>
+                <span class="method-start">13288 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">ValidateBillHistoryApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/billHistory, 447386011953)</span>
+                <span class="method-start">13289 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=ValidateBillHistoryApiStatus status=SUCCESS method=ValidateMVA10APIs.ValidateBillHi...)</span>
+                <span class="method-start">14699 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod(public void RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs.ValidatePlanApiStatus(java.lang.String...)</span>
+                <span class="method-start">14733 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">ValidatePlanApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/plan, 447386011953)</span>
+                <span class="method-start">14733 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=ValidatePlanApiStatus status=SUCCESS method=ValidateMVA10APIs.ValidatePlanApiStatus...)</span>
+                <span class="method-start">16771 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod(public void RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs.ValidateUsagesApiStatus(java.lang.Stri...)</span>
+                <span class="method-start">16799 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">ValidateUsagesApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/usages, 447386011953)</span>
+                <span class="method-start">16799 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=ValidateUsagesApiStatus status=SUCCESS method=ValidateMVA10APIs.ValidateUsagesApiSt...)</span>
+                <span class="method-start">17519 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod(public void RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs.ValidateExtrasApiStatus(java.lang.Stri...)</span>
+                <span class="method-start">17542 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">ValidateExtrasApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/extras, 447386011953)</span>
+                <span class="method-start">17543 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=ValidateExtrasApiStatus status=SUCCESS method=ValidateMVA10APIs.ValidateExtrasApiSt...)</span>
+                <span class="method-start">18294 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod(public void RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs.ValidateCurrentChargesApiStatus(java.l...)</span>
+                <span class="method-start">18322 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">ValidateCurrentChargesApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/currentCharges, 447386011953)</span>
+                <span class="method-start">18322 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=ValidateCurrentChargesApiStatus status=SUCCESS method=ValidateMVA10APIs.ValidateCur...)</span>
+                <span class="method-start">19069 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod(public void RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs.ValidateAdditionalChargesApiStatus(jav...)</span>
+                <span class="method-start">19106 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">ValidateAdditionalChargesApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/additionalCharges, 447386011953)</span>
+                <span class="method-start">19107 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=ValidateAdditionalChargesApiStatus status=SUCCESS method=ValidateMVA10APIs.Validate...)</span>
+                <span class="method-start">19864 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod(public void RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs.ValidateUpgradesApiStatus(java.lang.St...)</span>
+                <span class="method-start">19889 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">ValidateUpgradesApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/upgrades, 447386011953)</span>
+                <span class="method-start">19889 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=ValidateUpgradesApiStatus status=SUCCESS method=ValidateMVA10APIs.ValidateUpgradesA...)</span>
+                <span class="method-start">22133 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod(public void RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs.ValidateVOVApiStatus(java.lang.String,...)</span>
+                <span class="method-start">22180 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">ValidateVOVApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/vov, 447386011953)</span>
+                <span class="method-start">22180 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=ValidateVOVApiStatus status=SUCCESS method=ValidateMVA10APIs.ValidateVOVApiStatus(j...)</span>
+                <span class="method-start">22982 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod(public void RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs.ValidatePasswordLoginApiStatus(java.la...)</span>
+                <span class="method-start">23020 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">ValidatePasswordLoginApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v2/passwordLogin, 447386011953, DNU_...)</span>
+                <span class="method-start">23021 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=ValidatePasswordLoginApiStatus status=SUCCESS method=ValidateMVA10APIs.ValidatePass...)</span>
+                <span class="method-start">25382 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod(public void RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs.ValidatGetAccountsApiStatus(java.lang....)</span>
+                <span class="method-start">25407 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">ValidatGetAccountsApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/accounts, 447386011953)</span>
+                <span class="method-start">25407 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=ValidatGetAccountsApiStatus status=SUCCESS method=ValidateMVA10APIs.ValidatGetAccou...)</span>
+                <span class="method-start">26420 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod(public void RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs.ValidatGetSubscriptionsListApiStatus(j...)</span>
+                <span class="method-start">26439 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">ValidatGetSubscriptionsListApiStatus(https://mvax.dx-int1-common.digital.vodafoneaws.co.uk, /app/api/v1/accounts, 447386011953)</span>
+                <span class="method-start">26439 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=ValidatGetSubscriptionsListApiStatus status=FAILURE method=ValidateMVA10APIs.Valida...)</span>
+                <span class="method-start">26447 ms</span>
+              </div> <!-- configuration-method after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>
