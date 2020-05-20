@@ -35,27 +35,40 @@
 		value="/app/api/v1/additionalCharges" />
 	<parameter name="upgradesResoureURL"
 		value="/app/api/v1/upgrades" />
-			<parameter name="vovResoureURL"
-		value="/app/api/v1/vov" />
-		<parameter name="passwordLoginResoureURL"
+	<parameter name="vovResoureURL" value="/app/api/v1/vov" />
+	<parameter name="passwordLoginResoureURL"
 		value="/app/api/v2/passwordLogin" />
-		<parameter name="accountsResoureURL"
+	<parameter name="accountsResoureURL"
 		value="/app/api/v1/accounts" />
-        <parameter name="accountsResoureURL"
-		value="/app/api/v1/accounts" />
-
+	<parameter name="accountListsResoureURL"
+		value="/app/api/v1/accounts/" />
+	<parameter name="registeredNumbersResoureURL"
+		value="/app/api/v1/registeredNumbers" />
+	<parameter name="sendOTACResoureURL"
+		value="/app/api/v1/sendOTAC" />
+	<parameter name="upfrontLoginResoureURL"
+		value="/app/api/v1/upfrontLogin" />
 	<parameter name="subscription" value="447386011953" />
 	<parameter name="userName" value="DNU_S2_7000330528" />
 
-	<test thread-count="5" name="Test">
-
+	<test thread-count="5" name="Tes1">
 
 		<classes>
-
-			<class name="RestAssuredDemo.RestAssuredDemo.ValidateMVA10APIs" />
-
-
+			<class name="RestAssuredDemo.RestAssuredDemo.AppConfigApi" />
 		</classes>
 	</test> <!-- Test -->
+	
+	<test thread-count="5" name="Test2">
+		<classes>
+			<class name="RestAssuredDemo.RestAssuredDemo.HanSoloApi" />
+		</classes>
+	</test> <!-- Test -->
+	
+	<test thread-count="5" name="Test3">
+		<classes>
+			<class name="RestAssuredDemo.RestAssuredDemo.SoftTokenApi" />
+		</classes>
+	</test> <!-- Test -->
+	
 </suite> <!-- Suite -->
 

@@ -35,7 +35,7 @@ public class ReUsableMethods {
 		params.put("authenticationToken", "iTgXNCyUYSdVLOXZiQDSWAj2baDAUC0Hw0ySsp+pKNTKvY0+jOFppAsRr5XKIlPK9N93GL1G6YPlpRxmpA1tjeR7oCP+l2Fkr2IE9reAYKff+0Y1JqleJqFYtuvlus68vnLCndsuUzIcJht/N0R1A1h7GPahNYqQLa1KAdpI5npceSQXTOBSGov9Dsqd/um73aF9yx9V3OT0jjpyCGxC74rNLywp2lVmCeEQRcGkKvYZqwoghgEs7D7JPvKHtcGROjsbVgAUxyk10Su7/GeY1kSIkyPUajqn2qMCsVmU3tCCSzkdFezUIm9BNFx56egl04utKBv8F3Rwn+aCTxIROQ==");
 		return params;
 	}
-	public static Map segmentHeaders(String backendJwtSoftToken) {
+	public static Map segmentSubJWT(String backendJwtSoftToken) {
 
 		Map<String, String> params = new HashMap<String, String>();
 	
