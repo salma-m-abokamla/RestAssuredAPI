@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>TestNG Report</title>
+<style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}.invisible {display:none}</style>
+</head>
+<body>
+<table>
+<tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
+<tr><th colspan="7">testBeforeSuite</th></tr>
+<tr><td><a href="#t0">Tes1</a></td><td class="num">18</td><td class="num">0</td><td class="num attn">4</td><td class="num">59,725</td><td></td><td></td></tr>
+</table>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">testBeforeSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Tes1 &#8212; failed</th></tr><tr class="failedeven"><td rowspan="4">RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite</td><td><a href="#m0">BillHistory</a></td><td rowspan="1">1591896906822</td><td rowspan="1">784</td></tr><tr class="failedeven"><td><a href="#m1">Dashboard</a></td><td rowspan="1">1591896892109</td><td rowspan="1">0</td></tr><tr class="failedeven"><td><a href="#m2">Discover</a></td><td rowspan="1">1591896894572</td><td rowspan="1">8844</td></tr><tr class="failedeven"><td><a href="#m3">VeryMe</a></td><td rowspan="1">1591896892879</td><td rowspan="1">1647</td></tr><tr><th colspan="4">Tes1 &#8212; passed</th></tr><tr class="passedeven"><td rowspan="18">RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite</td><td><a href="#m4">AdditionalCharges</a></td><td rowspan="1">1591896912146</td><td rowspan="1">2718</td></tr><tr class="passedeven"><td><a href="#m5">AppConfig</a></td><td rowspan="1">1591896868423</td><td rowspan="1">3394</td></tr><tr class="passedeven"><td><a href="#m6">CurrentCharges</a></td><td rowspan="1">1591896911238</td><td rowspan="1">883</td></tr><tr class="passedeven"><td><a href="#m7">Extras</a></td><td rowspan="1">1591896910480</td><td rowspan="1">730</td></tr><tr class="passedeven"><td><a href="#m8">GetAccounts</a></td><td rowspan="1">1591896924307</td><td rowspan="1">1162</td></tr><tr class="passedeven"><td><a href="#m9">GetSubscriptionsList</a></td><td rowspan="1">1591896925487</td><td rowspan="1">1138</td></tr><tr class="passedeven"><td><a href="#m10">HanSolo</a></td><td rowspan="1">1591896872049</td><td rowspan="1">1323</td></tr><tr class="passedeven"><td><a href="#m11">PasswordLogin</a></td><td rowspan="1">1591896917661</td><td rowspan="1">6629</td></tr><tr class="passedeven"><td><a href="#m12">Plan</a></td><td rowspan="1">1591896907636</td><td rowspan="1">2080</td></tr><tr class="passedeven"><td><a href="#m13">ProductsAndServices</a></td><td rowspan="1">1591896903456</td><td rowspan="1">3336</td></tr><tr class="passedeven"><td><a href="#m14">Segment</a></td><td rowspan="1">1591896888203</td><td rowspan="1">2160</td></tr><tr class="passedeven"><td><a href="#m15">SoftToken</a></td><td rowspan="1">1591896873410</td><td rowspan="1">14754</td></tr><tr class="passedeven"><td><a href="#m16">SubsConfigWithSegment</a></td><td rowspan="1">1591896892112</td><td rowspan="1">724</td></tr><tr class="passedeven"><td><a href="#m17">SubsConfigWithoutSegment</a></td><td rowspan="1">1591896890397</td><td rowspan="1">1653</td></tr><tr class="passedeven"><td><a href="#m18">SubscriptionSwitch</a></td><td rowspan="1">1591896926674</td><td rowspan="1">1234</td></tr><tr class="passedeven"><td><a href="#m19">Upgrades</a></td><td rowspan="1">1591896914892</td><td rowspan="1">1897</td></tr><tr class="passedeven"><td><a href="#m20">Usages</a></td><td rowspan="1">1591896909743</td><td rowspan="1">713</td></tr><tr class="passedeven"><td><a href="#m21">VOV</a></td><td rowspan="1">1591896916822</td><td rowspan="1">805</td></tr></tbody>
+</table>
+<h2>Tes1</h2><h3 id="m0">RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite#BillHistory</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;500&gt;.
+
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:193)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:61)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:126)
+	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:134)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at io.restassured.internal.ValidatableResponseImpl.super$2$statusCode(ValidatableResponseImpl.groovy)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1262)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
+	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy:142)
+	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy)
+	at RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite.BillHistory(MVA10APIs_Suite.java:319)
+... Removed 40 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite#Dashboard</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.testng.TestNGException: 
+Cannot inject @Test annotated Method [Dashboard] with [class java.lang.String, class java.lang.String, class java.lang.String].
+For more information on native dependency injection please refer to http://testng.org/doc/documentation-main.html#native-dependency-injection
+... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite#Discover</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;500&gt;.
+
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:193)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:61)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:126)
+	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:134)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at io.restassured.internal.ValidatableResponseImpl.super$2$statusCode(ValidatableResponseImpl.groovy)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1262)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
+	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy:142)
+	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy)
+	at RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite.Discover(MVA10APIs_Suite.java:277)
+... Removed 40 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite#VeryMe</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;401&gt;.
+
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:193)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:61)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:126)
+	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:134)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at io.restassured.internal.ValidatableResponseImpl.super$2$statusCode(ValidatableResponseImpl.groovy)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1262)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
+	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy:142)
+	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy)
+	at RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite.VeryMe(MVA10APIs_Suite.java:256)
+... Removed 40 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite#AdditionalCharges</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite#AppConfig</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite#CurrentCharges</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite#Extras</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite#GetAccounts</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite#GetSubscriptionsList</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite#HanSolo</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite#PasswordLogin</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m12">RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite#Plan</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m13">RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite#ProductsAndServices</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m14">RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite#Segment</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m15">RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite#SoftToken</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m16">RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite#SubsConfigWithSegment</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m17">RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite#SubsConfigWithoutSegment</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m18">RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite#SubscriptionSwitch</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m19">RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite#Upgrades</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m20">RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite#Usages</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m21">RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite#VOV</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+</body>
+</html>

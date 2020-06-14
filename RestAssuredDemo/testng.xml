@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="testBeforeSuite">
+	<parameter name="baseURL" value="https://mvax.dx-int1-common.digital.vodafoneaws.co.uk" />
+	<parameter name="appConfigResoureURL" value="/app/api/v1/appconfig" />
+	<parameter name="subscription" value="447386011953" />
+	<test thread-count="5" name="Tes1">
+
+		<classes>
+			<class name="RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite" />
+		</classes>
+	</test> <!-- Test -->
+	
+
+	
+</suite> <!-- Suite -->
+

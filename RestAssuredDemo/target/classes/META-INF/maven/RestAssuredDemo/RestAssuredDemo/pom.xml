@@ -1,0 +1,201 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>RestAssuredDemo</groupId>
+	<artifactId>RestAssuredDemo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>RestAssuredDemo</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	    <java.home>C:\Program Files\Java\jdk1.8.0_191\bin\javac.exe</java.home>
+
+
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.14</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.jayway.jsonpath</groupId>
+			<artifactId>json-path</artifactId>
+			<version>2.2.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>3.0.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>4.0.0-alpha-3</version>
+		</dependency>
+		<dependency>
+			<groupId>com.relevantcodes</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>2.41.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.14.3</version>
+
+		</dependency>
+
+	</dependencies>
+	<build>
+	<resources>
+     <resource>
+       <directory>C:\Users\ElMetwally2S\Downloads\UK_UI2\RestAssuredDemo1\src\main\resources</directory>
+     </resource>
+   </resources>
+		<defaultGoal>clean test</defaultGoal>
+		<plugins>
+			<plugin>
+				<!-- no need to specify the groupId, it defaults to "org.apache.maven.plugins" -->
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.6</version> <!-- explicit version is safer for build consistency than implicit -->
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<phase>package</phase> <!-- bind the execution to the "package" phase -->
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<descriptors>
+								<descriptor>src/assembly/distribution.xml</descriptor> <!-- use the path to the file starting from base directory -->
+							</descriptors>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<!-- Build an executable JAR -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.1.0</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>lib/</classpathPrefix>
+							<mainClass>RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.19.1</version>
+
+				<configuration>
+					<SuitexmlFiles>
+						<suitexmlFiles>testng.xml</suitexmlFiles>
+
+
+					</SuitexmlFiles>
+					<skipTests>false</skipTests>
+				</configuration>
+
+
+			</plugin>
+			<plugin>
+				<groupId>ch.fortysix</groupId>
+				<artifactId>maven-postman-plugin</artifactId>
+				<version>0.1.6</version>
+				<executions>
+					<execution>
+						<id>Report Generation</id>
+						<phase>test</phase>
+						<goals>
+							<goal>send-mail</goal>
+						</goals>
+						<inherited>true</inherited>
+						<configuration>
+							<!-- From Email address -->
+							<from>Uk.testing.vis@gmail.com</from>
+							<!-- Email subject -->
+							<subject>Rest Assured Test Automation Report</subject>
+							<!-- Fail the build if the mail doesn't reach -->
+							<failonerror>false</failonerror>
+							<!-- Email Body Content -->
+							<htmlMessage>
+                                    <![CDATA[
+                                    <p>Hello All,</p>
+                                    <p>Congratulations !This is the first email generated automatically after all APIs tests executed.</p> 
+                                    <p>Attached html file for test results</p>
+                                    <p>Best Regards,</p>
+                                    <p>Salma</p>
+                                                                 
+                                    ]]>
+							</htmlMessage>
+							<!-- host -->
+							<mailhost>smtp.gmail.com</mailhost>
+							<!-- port of the host -->
+							<mailport>465</mailport>
+							<mailssl>true</mailssl>
+							<mailAltConfig>true</mailAltConfig>
+							<!-- Email Authentication(Username and Password) -->
+							<mailuser>salma.abokamla010@gmail.com</mailuser>
+							<mailpassword>soebtbzdarawwodu</mailpassword>
+							<receivers>
+								<!-- To Email address -->
+								<receiver>salma.elmetwally2@vodafone.com</receiver>
+
+
+
+							</receivers>
+							<fileSets>
+								<fileSet>
+									<!-- Report directory Path -->
+									<directory>C:\Users\ElMetwally2S\Downloads\UK_UI2\RestAssuredDemo\test-output\html</directory>
+									<includes>
+										<!-- Report file name -->
+										<include>Extent.html</include>
+									</includes>
+								</fileSet>
+							</fileSets>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		  <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>3.5.1</version>
+                <configuration>
+                      <verbose>true</verbose>
+                      <fork>true</fork>
+                      <executable>${java.home}</executable>
+                   <compilerVersion>1.8</compilerVersion>
+                   <source>1.8</source>
+                   <target>1.8</target>
+                 </configuration>
+             </plugin>
+		</plugins>
+	</build>
+</project>

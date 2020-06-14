@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [testBeforeSuite]">
+  <parameter name="baseURL" value="https://mvax.dx-int1-common.digital.vodafoneaws.co.uk"/>
+  <parameter name="appConfigResoureURL" value="/app/api/v1/appconfig"/>
+  <parameter name="subscription" value="447386011953"/>
+  <test thread-count="5" name="Tes1(failed)">
+    <classes>
+      <class name="RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="BillHistory"/>
+          <include name="afterMethod"/>
+          <include name="VeryMe"/>
+          <include name="beforeSuite"/>
+          <include name="Dashboard"/>
+          <include name="Discover"/>
+        </methods>
+      </class> <!-- RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite -->
+    </classes>
+  </test> <!-- Tes1(failed) -->
+</suite> <!-- Failed suite [testBeforeSuite] -->

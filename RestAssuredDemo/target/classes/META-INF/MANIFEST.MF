@@ -1,0 +1,33 @@
+Manifest-Version: 1.0
+Built-By: ElMetwally2S
+Class-Path: lib/poi-3.14.jar lib/commons-codec-1.10.jar lib/json-path-
+ 2.2.0.jar lib/json-smart-2.2.1.jar lib/accessors-smart-1.1.jar lib/as
+ m-5.0.3.jar lib/slf4j-api-1.7.16.jar lib/jaxb-api-2.2.4.jar lib/stax-
+ api-1.0-2.jar lib/activation-1.1.jar lib/extentreports-3.0.7.jar lib/
+ freemarker-2.3.23.jar lib/mongodb-driver-3.3.0.jar lib/bson-3.3.0.jar
+  lib/mongodb-driver-core-3.3.0.jar lib/httpclient-4.5.2.jar lib/httpc
+ ore-4.4.4.jar lib/commons-logging-1.2.jar lib/httpmime-4.5.2.jar lib/
+ jsoup-1.9.2.jar lib/gson-2.8.0.jar lib/selenium-java-4.0.0-alpha-3.ja
+ r lib/selenium-api-4.0.0-alpha-3.jar lib/selenium-chrome-driver-4.0.0
+ -alpha-3.jar lib/guava-27.1-jre.jar lib/failureaccess-1.0.1.jar lib/l
+ istenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar lib/jsr
+ 305-3.0.2.jar lib/checker-qual-2.5.2.jar lib/error_prone_annotations-
+ 2.2.0.jar lib/j2objc-annotations-1.1.jar lib/animal-sniffer-annotatio
+ ns-1.17.jar lib/selenium-chromium-driver-4.0.0-alpha-3.jar lib/seleni
+ um-devtools-4.0.0-alpha-3.jar lib/selenium-http-4.0.0-alpha-3.jar lib
+ /selenium-json-4.0.0-alpha-3.jar lib/selenium-edge-driver-4.0.0-alpha
+ -3.jar lib/selenium-edgehtml-driver-4.0.0-alpha-3.jar lib/selenium-fi
+ refox-driver-4.0.0-alpha-3.jar lib/selenium-firefox-xpi-driver-4.0.0-
+ alpha-3.jar lib/selenium-ie-driver-4.0.0-alpha-3.jar lib/selenium-ope
+ ra-driver-4.0.0-alpha-3.jar lib/selenium-remote-driver-4.0.0-alpha-3.
+ jar lib/okhttp-4.0.1.jar lib/okio-2.2.2.jar lib/kotlin-stdlib-1.3.40.
+ jar lib/kotlin-stdlib-common-1.3.40.jar lib/annotations-13.0.jar lib/
+ opentracing-api-0.33.0.jar lib/byte-buddy-1.9.12.jar lib/commons-exec
+ -1.3.jar lib/selenium-safari-driver-4.0.0-alpha-3.jar lib/selenium-su
+ pport-4.0.0-alpha-3.jar lib/extentreports-2.41.2.jar lib/sqlite-jdbc-
+ 3.8.11.1.jar lib/testng-6.14.3.jar lib/jcommander-1.72.jar lib/bsh-2.
+ 0b6.jar
+Build-Jdk: 1.8.0_191
+Created-By: Maven Integration for Eclipse
+Main-Class: RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite
+
