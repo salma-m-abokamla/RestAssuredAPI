@@ -14,6 +14,8 @@ resources:
     clean: true
 
 steps:
+ - checkout: self
+    clean: true
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
