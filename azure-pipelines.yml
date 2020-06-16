@@ -14,6 +14,7 @@ resources:
   - checkout: self
      clean: true
      persistCredentials: true
+     
 steps:
 - task: Maven@3
   inputs:
