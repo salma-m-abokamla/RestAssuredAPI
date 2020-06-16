@@ -10,7 +10,7 @@ pool:
 
 resources:
   - repo: self
-     clean: true
+    clean: true
   - checkout: self
      clean: true
      persistCredentials: true
