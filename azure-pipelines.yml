@@ -11,9 +11,7 @@ pool:
 resources:
   - repo: self
     clean: true
-checkout: self
-   clean: true
-    persistCredentials: true
+
 
 steps:
 - checkout: self
