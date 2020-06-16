@@ -37,5 +37,5 @@ steps:
        testResultsFiles: '**/surefire-reports/TEST-*.xml'
        targetType: inline
        script: 'sed -i "s/\${deploymentEnv}/\$(deploymentEnv)/g"Configuration.properties'
-       displayName: 'inject properties'
+      displayName: 'inject properties'
 
