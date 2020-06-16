@@ -29,16 +29,5 @@ steps:
     displayName: 'inject properties'
 
 
-  - checkout: self
-    clean: true
-    persistCredentials: true
-
-  - bash: |
-      echo "My first pipeline"
-    displayName: 'My First Pipeline'
-  - script: |
-      echo Add other tasks to build, test, and deploy your project.
-      echo See https://aka.ms/yaml
-    displayName: 'Run a multi-line script'
 
   
