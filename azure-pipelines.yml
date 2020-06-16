@@ -27,7 +27,8 @@ steps:
     targetType: inline
     script: 'sed -i "s/\${deploymentEnv}/\$(deploymentEnv)/g" Configuration.properties'
     displayName: 'inject properties'
- 
-
+- maven:
+      goals: clean install
+      pom-file: "employees-app/pom.xml"
 
   
