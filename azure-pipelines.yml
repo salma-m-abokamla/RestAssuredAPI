@@ -27,7 +27,10 @@ steps:
     targetType: inline
     script: 'sed -i "s/\${deploymentEnv}/\$(deploymentEnv)/g" Configuration.properties'
     displayName: 'inject properties'
-
+jobs:
+- job: Job1
+  workspace:
+    clean: all # what to clean up before the job runs - outputs | resources | all 
 
 
   
