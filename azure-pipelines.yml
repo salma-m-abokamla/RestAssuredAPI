@@ -1,4 +1,3 @@
-# Starter pipeline
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -12,7 +11,9 @@ pool:
 resources:
   - repo: self
     clean: true
-
+  - checkout: self
+     clean: true
+     persistCredentials: true
 steps:
 - task: Maven@3
   inputs:
@@ -27,5 +28,5 @@ steps:
     targetType: inline
     script: 'sed -i "s/\${deploymentEnv}/\$(deploymentEnv)/g" Configuration.properties'
     displayName: 'inject properties'
-
+    
   
