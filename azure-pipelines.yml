@@ -14,8 +14,19 @@ resources:
     clean: true
 
 steps:
- - checkout: self
+  - checkout: self
     clean: true
+    persistCredentials: true
+
+  - bash: |
+      echo "My first pipeline"
+    displayName: 'My First Pipeline'
+  - script: |
+      echo Add other tasks to build, test, and deploy your project.
+      echo See https://aka.ms/yaml
+    displayName: 'Run a multi-line script'
+
+  steps:
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
@@ -26,8 +37,7 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
-    targetType: inline
+   targetType: inline
     script: 'sed -i "s/\${deploymentEnv}/\$(deploymentEnv)/g" Configuration.properties'
     displayName: 'inject properties'
-
 
