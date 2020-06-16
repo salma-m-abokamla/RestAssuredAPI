@@ -14,19 +14,7 @@ resources:
     clean: true
 
 steps:
-  - checkout: self
-    clean: true
-    persistCredentials: true
-
-  - bash: |
-      echo "My first pipeline"
-    displayName: 'My First Pipeline'
-  - script: |
-      echo Add other tasks to build, test, and deploy your project.
-      echo See https://aka.ms/yaml
-    displayName: 'Run a multi-line script'
-    
-  - task: Maven@3 
+- task: Maven@3 
      inputs:
       mavenPomFile: 'pom.xml'
       mavenOptions: '-Xmx3072m'
@@ -40,3 +28,16 @@ steps:
       script: 'sed -i "s/\${deploymentEnv}/\$(deploymentEnv)/g" Configuration.properties'
      displayName: 'inject properties'
 
+  - checkout: self
+    clean: true
+    persistCredentials: true
+
+  - bash: |
+      echo "My first pipeline"
+    displayName: 'My First Pipeline'
+  - script: |
+      echo Add other tasks to build, test, and deploy your project.
+      echo See https://aka.ms/yaml
+    displayName: 'Run a multi-line script'
+
+  
