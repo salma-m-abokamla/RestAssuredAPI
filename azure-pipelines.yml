@@ -12,7 +12,7 @@ resources:
   - repo: self
     clean: true
 checkout: self
-  - clean: true
+   clean: true
     persistCredentials: true
 
 steps:
