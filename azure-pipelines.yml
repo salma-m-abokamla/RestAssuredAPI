@@ -16,6 +16,9 @@ checkout: self
     persistCredentials: true
 
 steps:
+- checkout: self
+   clean: true
+    persistCredentials: true
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
