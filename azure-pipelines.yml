@@ -1,32 +1,33 @@
-# Maven
-# Build your Java project and run tests with Apache Maven.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/java
-resources:
-  - repo: self
-    clean: true
-queue:
-  name: nwo-build-agents
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
 trigger:
-- master
+- RestAssured_10.7
 
 pool:
   vmImage: 'ubuntu-latest'
 
+resources:
+  - repo: self
+    clean: true
+
 steps:
-- checkout: self
+  - checkout: self
+    clean: true
+    persistCredentials: true
 
-- task: Maven@3
+  - bash: |
+      echo "My first pipeline"
+    displayName: 'My First Pipeline'
+  - script: |
+      echo Add other tasks to build, test, and deploy your project.
+      echo See https://aka.ms/yaml
+    displayName: 'Run a multi-line script'
 
-  inputs:
-    mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.8'
-    jdkArchitectureOption: 'x64'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'package'
-
-
-
+  - task: Bash@3
+    inputs:
+      targetType: inline
+      script: 'sed -i "s/\${deploymentEnv}/\$(deploymentEnv)/g" Configuration.properties'
+    displayName: 'inject properties'
