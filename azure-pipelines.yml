@@ -29,6 +29,6 @@ steps:
     displayName: 'inject properties'
 - maven:
       goals: clean install
-      pom-file: "employees-app/pom.xml"
+      pom-file: "RestAssuredAPI/pom.xml"
 
   
