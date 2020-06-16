@@ -12,8 +12,8 @@ resources:
   - repo: self
     clean: true
   - checkout: self
-       clean: true
-       persistCredentials: true
+    clean: true
+    persistCredentials: true
 
 steps:
 - task: Maven@3
