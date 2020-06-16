@@ -27,6 +27,7 @@ steps:
     targetType: inline
     script: 'sed -i "s/\${deploymentEnv}/\$(deploymentEnv)/g" Configuration.properties'
     displayName: 'inject properties'
+    
 jobs:
 - job: Job1
   workspace:
