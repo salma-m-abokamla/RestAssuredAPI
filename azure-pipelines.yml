@@ -10,10 +10,10 @@ pool:
 
 resources:
   - repo: self
-    clean: true
+     clean: true
   - checkout: self
-    clean: true
-    persistCredentials: true
+     clean: true
+     persistCredentials: true
 
 steps:
 - task: Maven@3
