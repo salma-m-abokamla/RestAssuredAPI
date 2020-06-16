@@ -27,7 +27,7 @@ steps:
     targetType: inline
     script: 'sed -i "s/\${deploymentEnv}/\$(deploymentEnv)/g" Configuration.properties'
     displayName: 'inject properties'
-- maven:
+  - maven:
       goals: clean install
       pom-file: "RestAssuredAPI/pom.xml"
 
