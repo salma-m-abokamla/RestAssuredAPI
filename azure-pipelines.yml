@@ -8,11 +8,6 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-resources:
-  - repo: self
-    clean: true
-
-
 steps:
 - checkout: self
    clean: true
