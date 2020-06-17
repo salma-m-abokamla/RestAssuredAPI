@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="testBeforeSuite" duration-ms="4320" started-at="2020-06-17T11:05:59Z" finished-at="2020-06-17T11:06:03Z">
+    <groups>
+    </groups>
+    <test name="Tes1" duration-ms="4320" started-at="2020-06-17T11:05:59Z" finished-at="2020-06-17T11:06:03Z">
+      <class name="RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite@5419f379]" name="beforeSuite" is-config="true" duration-ms="33" started-at="2020-06-17T11:05:59Z" finished-at="2020-06-17T11:05:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite@5419f379]" name="beforeMethod" is-config="true" duration-ms="321" started-at="2020-06-17T11:05:59Z" finished-at="2020-06-17T11:05:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite.AppConfig()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="AppConfig()[pri:1, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite@5419f379]" name="AppConfig" duration-ms="3668" started-at="2020-06-17T11:05:59Z" finished-at="2020-06-17T11:06:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AppConfig -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite@5419f379]" name="afterMethod" is-config="true" duration-ms="308" started-at="2020-06-17T11:06:03Z" finished-at="2020-06-17T11:06:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=AppConfig status=SUCCESS method=MVA10APIs_Suite.AppConfig()[pri:1, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite@5419f379] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite -->
+    </test> <!-- Tes1 -->
+  </suite> <!-- testBeforeSuite -->
+</testng-results>

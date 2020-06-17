@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [testBeforeSuite]">
+  <test thread-count="5" verbose="0" name="Tes1(failed)">
+    <classes>
+      <class name="RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="AppConfig"/>
+          <include name="afterMethod"/>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite -->
+    </classes>
+  </test> <!-- Tes1(failed) -->
+</suite> <!-- Failed suite [testBeforeSuite] -->
