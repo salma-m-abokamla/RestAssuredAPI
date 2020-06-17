@@ -20,4 +20,8 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
-
+- task: Bash@3
+  inputs:
+    targetType: inline
+    script: 'sed -i "s/\${deploymentEnv}/\$(deploymentEnv)/g" configs/Configuration.properties'
+    displayName: 'inject properties'
