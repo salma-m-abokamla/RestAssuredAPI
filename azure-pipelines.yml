@@ -1,4 +1,8 @@
 # Maven
+- task: FileTransform@2
+  inputs:
+    folderPath: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    xmlTransformationRules: '-transform **\*.Release.config -xml **\*properties'
 # Build your Java project and run tests with Apache Maven.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
