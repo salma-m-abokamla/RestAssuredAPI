@@ -27,7 +27,6 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import files.CofigFileReader;
 import files.ReUsableMethods;
-import files.ReadExcelDataSheet;
 import files.ResourceUrls;
 import files.payload;
 import io.restassured.RestAssured;
@@ -519,9 +518,9 @@ public class MVA10APIs_Suite extends BaseClass {
 		accountIdHash = js1.getString("accounts[0].accountIdHash");
 		accountId = js1.getString("accounts[0].accountId");
 
-		/*System.out.println("accountType" + accountType);
+		System.out.println("accountType" + accountType);
 		System.out.println("accountIdHash" + accountIdHash);
-		System.out.println("accountId" + accountId);*/
+		System.out.println("accountId" + accountId);
 
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
