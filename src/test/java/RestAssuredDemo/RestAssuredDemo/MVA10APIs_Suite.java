@@ -110,7 +110,7 @@ public class MVA10APIs_Suite extends BaseClass {
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
 	}
 
-	/*@Test (priority = 2)
+	@Test (priority = 2)
 	public void HanSolo( ) {
 
 		ReUsableMethods.generateExtentReport();
