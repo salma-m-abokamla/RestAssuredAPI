@@ -12,11 +12,6 @@ pool:
 steps:
 - task: Maven@3
   inputs:
-<<<<<<< HEAD
-    targetType: inline
-    script: 'sed -i "s/\${deploymentEnv}/\$(deploymentEnv)/g" configs\Configuration.properties'
-    displayName: 'inject properties'
-=======
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
@@ -26,5 +21,3 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
 
-
->>>>>>> f83f671cfad476740c7e1861cc7c6db8cf6cd1bd
