@@ -12,7 +12,7 @@ import java.util.Properties;
 public class CofigFileReader {
 	public static String deploymentEnv;
 	public static Properties properties;
-	private final static String propertyFilePath = "configs/Configuration.properties";
+	private final static String propertyFilePath = "configs//Configuration.properties";
 
 	
 	public static void readProperityFile() {
