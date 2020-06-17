@@ -13,7 +13,7 @@ public class RunnableClass {
 		TestListenerAdapter tla = new TestListenerAdapter();
 	    TestNG testng = new TestNG();
 	    List<String> suites = Lists.newArrayList();
-	    suites.add("C:\\Users\\ElMetwally2S\\Downloads\\UK_UI2\\RestAssuredDemo\\testng.xml");//path to xml..
+	    suites.add("C:\\eclipse_workspace\\RestAssuredPipeline\\testng.xml");//path to xml..
 	    testng.setTestSuites(suites);
 	    testng.run();
 	}

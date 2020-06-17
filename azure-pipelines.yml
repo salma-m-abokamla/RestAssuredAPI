@@ -1,10 +1,10 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+# Maven
+# Build your Java project and run tests with Apache Maven.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/java
 
 trigger:
-- RestAssured_10.8
+- RestAssuredApi
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -12,6 +12,11 @@ pool:
 steps:
 - task: Maven@3
   inputs:
+<<<<<<< HEAD
+    targetType: inline
+    script: 'sed -i "s/\${deploymentEnv}/\$(deploymentEnv)/g" configs\Configuration.properties'
+    displayName: 'inject properties'
+=======
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
@@ -21,4 +26,5 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
 
-  
+
+>>>>>>> f83f671cfad476740c7e1861cc7c6db8cf6cd1bd
