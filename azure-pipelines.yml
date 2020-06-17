@@ -1,3 +1,4 @@
+
 trigger:
 - RestAssuredApi
 
@@ -5,11 +6,6 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: FileTransform@2
-  inputs:
-    folderPath: '$(System.DefaultWorkingDirectory)/**/*.zip'
-    xmlTransformationRules: '-transform **\*.Release.config -xml **\*properties'
-    
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
