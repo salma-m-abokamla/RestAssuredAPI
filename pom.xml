@@ -69,7 +69,7 @@
                           <fileSets>
                              <fileSet>
                                   <!-- Report directory Path -->
-                                  <directory>C:\eclipse_workspace\RestAssuredPipeline\test-output\html</directory>
+                                  <directory>test-output\html</directory>
                                        <includes>
                                           <!-- Report file name -->
                                           <include>Extent.html</include>
