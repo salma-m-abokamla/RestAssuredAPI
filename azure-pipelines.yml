@@ -5,7 +5,12 @@
 
 trigger:
 - RestAssuredApi
-
+schedules:
+- cron: "0 12 * * *"
+  displayName: Daily midnight build
+  branches:
+    include:
+    - Env_Monitoring
 pool:
   vmImage: 'ubuntu-latest'
 
