@@ -46,7 +46,7 @@
                           <htmlMessage>
                                     <![CDATA[
                                      <p>Hello All,</p>
-                                    <p>Congratulations !This is the first email generated automatically after all APIs tests executed.</p> 
+                                    <p>Congratulations !This is the first email generated automatically after all APIs tests executed on azure pipeline.</p> 
                                     <p>Attached html file for test results</p>
                                     <p>Best Regards,</p>
                                     <p>Salma</p>
@@ -64,6 +64,8 @@
                           <receivers>
                                <!-- To Email address -->
                                <receiver>salma.elmetwally2@vodafone.com</receiver>
+                               <receiver>mennatullah.elgohary1@vodafone.com</receiver>
+                               <receiver>dalia.ali4@vodafone.com</receiver>
 
                           </receivers>
                           <fileSets>
