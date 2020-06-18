@@ -6,7 +6,7 @@
 trigger:
 - RestAssuredApi
 schedules:
-- cron: "0 12 * * *"
+- cron: "23 0 * * *"
   displayName: Daily midnight build
   branches:
     include:
