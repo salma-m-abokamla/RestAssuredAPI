@@ -1,0 +1,24 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 22, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 124.062 sec <<< FAILURE! - in TestSuite
+AppConfig(RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite)  Time elapsed: 62.99 sec  <<< FAILURE!
+javax.net.ssl.SSLHandshakeException: Remote host closed connection during handshake
+	at RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite.AppConfig(MVA10APIs_Suite.java:103)
+Caused by: java.io.EOFException: SSL peer shut down incorrectly
+	at RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite.AppConfig(MVA10APIs_Suite.java:103)
+
+VeryMe(RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite)  Time elapsed: 1.737 sec  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <200> doesn't match actual status code <401>.
+
+	at RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite.VeryMe(MVA10APIs_Suite.java:256)
+
+CurrentCharges(RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite)  Time elapsed: 2.254 sec  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <200> doesn't match actual status code <500>.
+
+	at RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite.CurrentCharges(MVA10APIs_Suite.java:401)
+

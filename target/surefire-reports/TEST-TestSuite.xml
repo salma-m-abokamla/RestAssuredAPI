@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="124.062" tests="22" errors="0" skipped="0" failures="3">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_152\jre\bin"/>
+    <property name="java.vm.version" value="25.152-b16"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\eclipse_workspace\RestAssuredPipeline"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\eclipse_workspace\RestAssuredPipeline"/>
+    <property name="java.runtime.version" value="1.8.0_152-b16"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_152\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\ELMETW~1\AppData\Local\Temp\"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="classworlds.conf" value="C:\eclipse_workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf3156241525598768387.tmp"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_152\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jdk1.8.0_191/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_191/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_191/bin/../jre/lib/amd64;C:\Program Files\Java\jdk1.8.0_191\bin;C:\Users\ElMetwally2S\scoop\shims;C:\Users\ElMetwally2S\AppData\Local\Microsoft\WindowsApps;C:\Users\ElMetwally2S\AppData\Roaming\npm;C:\Users\ElMetwally2S\AppData\Local\GitHubDesktop\bin;C:\ProgramData\ElMetwally2S\GitHubDesktop\bin;C:\Autoamtion\eclipse[eclipse-jee-oxygen-R-win32-x86_64]\eclipse;;."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.0"/>
+    <property name="user.home" value="C:\Users\ElMetwally2S"/>
+    <property name="user.timezone" value="Africa/Cairo"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="user.name" value="ElMetwally2S"/>
+    <property name="java.class.path" value="C:\Autoamtion\eclipse[eclipse-jee-oxygen-R-win32-x86_64]\eclipse\plugins\org.eclipse.m2e.maven.runtime_1.8.2.20171007-0216\jars\plexus-classworlds-2.5.2.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_152\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B package"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_152"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_152\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_152\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_152\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_152\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_152\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_152\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_152\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_152\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_152\jre\classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="C:\eclipse_workspace\RestAssuredPipeline\EMBEDDED"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase name="AppConfig" classname="RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite" time="62.99">
+    <failure message="Remote host closed connection during handshake" type="javax.net.ssl.SSLHandshakeException">javax.net.ssl.SSLHandshakeException: Remote host closed connection during handshake
+	at RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite.AppConfig(MVA10APIs_Suite.java:103)
+Caused by: java.io.EOFException: SSL peer shut down incorrectly
+	at RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite.AppConfig(MVA10APIs_Suite.java:103)
+</failure>
+    <system-out><![CDATA[BaseUrl :https://mvax.dx-int1-common.digital.vodafoneaws.co.uk]]></system-out>
+    <system-err><![CDATA[log4j:WARN No appenders could be found for logger (org.apache.http.impl.conn.BasicClientConnectionManager).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+]]></system-err>
+  </testcase>
+  <testcase name="HanSolo" classname="RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite" time="2.517"/>
+  <testcase name="SoftToken" classname="RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite" time="5.939"/>
+  <testcase name="Segment" classname="RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite" time="2.263"/>
+  <testcase name="SubsConfigWithoutSegment" classname="RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite" time="2.137"/>
+  <testcase name="Dashboard" classname="RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite" time="4.782"/>
+  <testcase name="SubsConfigWithSegment" classname="RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite" time="1.094"/>
+  <testcase name="VeryMe" classname="RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite" time="1.737">
+    <failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; doesn&apos;t match actual status code &lt;401&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <200> doesn't match actual status code <401>.
+
+	at RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite.VeryMe(MVA10APIs_Suite.java:256)
+]]></failure>
+  </testcase>
+  <testcase name="Discover" classname="RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite" time="2.134"/>
+  <testcase name="ProductsAndServices" classname="RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite" time="1.688"/>
+  <testcase name="BillHistory" classname="RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite" time="2.582"/>
+  <testcase name="Plan" classname="RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite" time="3.804"/>
+  <testcase name="Usages" classname="RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite" time="1.673"/>
+  <testcase name="Extras" classname="RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite" time="2.068"/>
+  <testcase name="CurrentCharges" classname="RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite" time="2.254">
+    <failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; doesn&apos;t match actual status code &lt;500&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <200> doesn't match actual status code <500>.
+
+	at RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite.CurrentCharges(MVA10APIs_Suite.java:401)
+]]></failure>
+  </testcase>
+  <testcase name="AdditionalCharges" classname="RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite" time="4.602"/>
+  <testcase name="Upgrades" classname="RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite" time="3.363"/>
+  <testcase name="VOV" classname="RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite" time="1.786"/>
+  <testcase name="PasswordLogin" classname="RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite" time="7.023"/>
+  <testcase name="GetAccounts" classname="RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite" time="1.635"/>
+  <testcase name="GetSubscriptionsList" classname="RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite" time="1.883"/>
+  <testcase name="SubscriptionSwitch" classname="RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite" time="1.906"/>
+</testsuite>
