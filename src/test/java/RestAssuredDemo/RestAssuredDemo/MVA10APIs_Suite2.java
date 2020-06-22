@@ -2,40 +2,20 @@ package RestAssuredDemo.RestAssuredDemo;
 
 import static io.restassured.RestAssured.given;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintStream;
-import java.net.MalformedURLException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Logger;
-import java.io.PrintStream;
-
-import org.testng.TestListenerAdapter;
-import org.testng.TestNG;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import org.testng.collections.Lists;
 
 import com.apitesting.listners.BaseClass;
+import com.apitesting.listners.ExtentManager;
 import com.apitesting.listners.ExtentTestManager;
 
 import com.relevantcodes.extentreports.LogStatus;
 
 import files.ReUsableMethods;
 import files.ResourceUrls;
-import files.payload;
 import io.restassured.RestAssured;
-import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.builder.ResponseSpecBuilder;
-import io.restassured.config.LogConfig;
-import io.restassured.http.ContentType;
+
 import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
 
 public class MVA10APIs_Suite2 extends BaseClass {
 
@@ -46,11 +26,10 @@ public class MVA10APIs_Suite2 extends BaseClass {
 	public String hansoloResoureUR;
 	public String hanSoloresponce;
 	public String softTokenResoureURL;
-
-    @beforesuite
+	@BeforeSuite
     public void tear()
     {
-        extent.flush();
+		ExtentManager.extent.flush();
     }
 	@Test
 	public void INT1_Environment_SUP02() {
@@ -60,7 +39,7 @@ public class MVA10APIs_Suite2 extends BaseClass {
 		hansoloResoureUR = ResourceUrls.hansoloResoureURL;
 		try {
 			hanSoloresponce = given().headers(ReUsableMethods.generalHeaders(CofigFileReader.getSubscriprionSUP02()))
-					.when().get(hansoloResoureUR).then().assertThat().statusCode(200).extract().response().asString();
+					.when().get(hansoloResoureUR).then().assertThat().statusCode(200).log().all().extract().response().asString();
 		} catch (AssertionError e) {
 			String failureMessage = "INT11 environment is down";
 			System.out.println(failureMessage);
@@ -77,7 +56,7 @@ public class MVA10APIs_Suite2 extends BaseClass {
 		try {
 			responce = given().headers(ReUsableMethods.generalHeaders(CofigFileReader.getSubscriprionSUP02()))
 					.header("Msp-Hansolo-Token", mspHansoloToken).when().get(softTokenResoureURL).then().assertThat()
-					.statusCode(200).extract().response().asString();
+					.statusCode(200).log().all().extract().response().asString();
 		} catch (AssertionError e) {
 
 			String failureMessage = "INT1 environment is down";
