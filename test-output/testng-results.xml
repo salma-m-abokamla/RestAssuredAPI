@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="testBeforeSuite" duration-ms="45344" started-at="2020-06-18T19:22:58Z" finished-at="2020-06-18T19:23:43Z">
+  <suite name="testBeforeSuite" duration-ms="10702" started-at="2020-06-22T15:23:49Z" finished-at="2020-06-22T15:24:00Z">
     <groups>
     </groups>
-    <test name="Tes1" duration-ms="45344" started-at="2020-06-18T19:22:58Z" finished-at="2020-06-18T19:23:43Z">
+    <test name="Tes1" duration-ms="10702" started-at="2020-06-22T15:23:49Z" finished-at="2020-06-22T15:24:00Z">
       <class name="RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2">
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@490ab905]" name="beforeMethod" is-config="true" duration-ms="290" started-at="2020-06-18T19:22:58Z" finished-at="2020-06-18T19:22:58Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@56ac3a89]" name="beforeMethod" is-config="true" duration-ms="138" started-at="2020-06-22T15:23:49Z" finished-at="2020-06-22T15:23:49Z">
           <params>
             <param index="0">
               <value>
@@ -18,22 +18,26 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="DEV_Environment_SUP02()[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@490ab905]" name="DEV_Environment_SUP02" duration-ms="14158" started-at="2020-06-18T19:22:58Z" finished-at="2020-06-18T19:23:12Z">
+        <test-method status="PASS" signature="DEV_Environment_SUP02()[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@56ac3a89]" name="DEV_Environment_SUP02" duration-ms="3376" started-at="2020-06-22T15:23:49Z" finished-at="2020-06-22T15:23:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- DEV_Environment_SUP02 -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@490ab905]" name="afterMethod" is-config="true" duration-ms="331" started-at="2020-06-18T19:23:12Z" finished-at="2020-06-18T19:23:12Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@56ac3a89]" name="afterMethod" is-config="true" duration-ms="200" started-at="2020-06-22T15:23:53Z" finished-at="2020-06-22T15:23:53Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=DEV_Environment_SUP02 status=SUCCESS method=MVA10APIs_Suite2.DEV_Environment_SUP02()[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@490ab905] output={null}]]]>
+                <![CDATA[[TestResult name=DEV_Environment_SUP02 status=SUCCESS method=MVA10APIs_Suite2.DEV_Environment_SUP02()[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@56ac3a89] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@490ab905]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-06-18T19:23:12Z" finished-at="2020-06-18T19:23:12Z">
+        <test-method status="PASS" signature="INT1_Environment_SUP02()[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@56ac3a89]" name="INT1_Environment_SUP02" duration-ms="1353" started-at="2020-06-22T15:23:53Z" finished-at="2020-06-22T15:23:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- INT1_Environment_SUP02 -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@56ac3a89]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-06-22T15:23:53Z" finished-at="2020-06-22T15:23:53Z">
           <params>
             <param index="0">
               <value>
@@ -44,22 +48,44 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="INT1_Environment_SUP02()[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@490ab905]" name="INT1_Environment_SUP02" duration-ms="9667" started-at="2020-06-18T19:23:12Z" finished-at="2020-06-18T19:23:22Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- INT1_Environment_SUP02 -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@490ab905]" name="afterMethod" is-config="true" duration-ms="56" started-at="2020-06-18T19:23:22Z" finished-at="2020-06-18T19:23:22Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@56ac3a89]" name="afterMethod" is-config="true" duration-ms="41" started-at="2020-06-22T15:23:54Z" finished-at="2020-06-22T15:23:54Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=INT1_Environment_SUP02 status=SUCCESS method=MVA10APIs_Suite2.INT1_Environment_SUP02()[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@490ab905] output={null}]]]>
+                <![CDATA[[TestResult name=INT1_Environment_SUP02 status=SUCCESS method=MVA10APIs_Suite2.INT1_Environment_SUP02()[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@56ac3a89] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@490ab905]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-06-18T19:23:22Z" finished-at="2020-06-18T19:23:22Z">
+        <test-method status="PASS" signature="QC1_Environment_E7()[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@56ac3a89]" name="QC1_Environment_E7" duration-ms="1333" started-at="2020-06-22T15:23:54Z" finished-at="2020-06-22T15:23:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- QC1_Environment_E7 -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@56ac3a89]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-06-22T15:23:54Z" finished-at="2020-06-22T15:23:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2.QC1_Environment_E7()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@56ac3a89]" name="afterMethod" is-config="true" duration-ms="40" started-at="2020-06-22T15:23:56Z" finished-at="2020-06-22T15:23:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=QC1_Environment_E7 status=SUCCESS method=MVA10APIs_Suite2.QC1_Environment_E7()[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@56ac3a89] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@56ac3a89]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-06-22T15:23:56Z" finished-at="2020-06-22T15:23:56Z">
           <params>
             <param index="0">
               <value>
@@ -70,22 +96,26 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="QC1_Environment_SUP02()[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@490ab905]" name="QC1_Environment_SUP02" duration-ms="9611" started-at="2020-06-18T19:23:22Z" finished-at="2020-06-18T19:23:32Z">
+        <test-method status="PASS" signature="QC1_Environment_SUP02()[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@56ac3a89]" name="QC1_Environment_SUP02" duration-ms="2159" started-at="2020-06-22T15:23:56Z" finished-at="2020-06-22T15:23:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- QC1_Environment_SUP02 -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@490ab905]" name="afterMethod" is-config="true" duration-ms="30" started-at="2020-06-18T19:23:32Z" finished-at="2020-06-18T19:23:32Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@56ac3a89]" name="afterMethod" is-config="true" duration-ms="22" started-at="2020-06-22T15:23:58Z" finished-at="2020-06-22T15:23:58Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=QC1_Environment_SUP02 status=SUCCESS method=MVA10APIs_Suite2.QC1_Environment_SUP02()[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@490ab905] output={null}]]]>
+                <![CDATA[[TestResult name=QC1_Environment_SUP02 status=SUCCESS method=MVA10APIs_Suite2.QC1_Environment_SUP02()[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@56ac3a89] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@490ab905]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2020-06-18T19:23:32Z" finished-at="2020-06-18T19:23:32Z">
+        <test-method status="PASS" signature="SIT1_Environment_SUP02()[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@56ac3a89]" name="SIT1_Environment_SUP02" duration-ms="600" started-at="2020-06-22T15:23:58Z" finished-at="2020-06-22T15:23:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SIT1_Environment_SUP02 -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@56ac3a89]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-06-22T15:23:58Z" finished-at="2020-06-22T15:23:58Z">
           <params>
             <param index="0">
               <value>
@@ -96,22 +126,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="SIT1_Environment_SUP02()[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@490ab905]" name="SIT1_Environment_SUP02" duration-ms="676" started-at="2020-06-18T19:23:32Z" finished-at="2020-06-18T19:23:32Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SIT1_Environment_SUP02 -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@490ab905]" name="afterMethod" is-config="true" duration-ms="39" started-at="2020-06-18T19:23:32Z" finished-at="2020-06-18T19:23:32Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@56ac3a89]" name="afterMethod" is-config="true" duration-ms="59" started-at="2020-06-22T15:23:59Z" finished-at="2020-06-22T15:23:59Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=SIT1_Environment_SUP02 status=SUCCESS method=MVA10APIs_Suite2.SIT1_Environment_SUP02()[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@490ab905] output={null}]]]>
+                <![CDATA[[TestResult name=SIT1_Environment_SUP02 status=SUCCESS method=MVA10APIs_Suite2.SIT1_Environment_SUP02()[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@56ac3a89] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@490ab905]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-06-18T19:23:32Z" finished-at="2020-06-18T19:23:32Z">
+        <test-method status="PASS" signature="SIT2_Environment_SUP02()[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@56ac3a89]" name="SIT2_Environment_SUP02" duration-ms="1324" started-at="2020-06-22T15:23:59Z" finished-at="2020-06-22T15:24:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SIT2_Environment_SUP02 -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@56ac3a89]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-06-22T15:23:59Z" finished-at="2020-06-22T15:23:59Z">
           <params>
             <param index="0">
               <value>
@@ -122,21 +152,21 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="SIT2_Environment_SUP02()[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@490ab905]" name="SIT2_Environment_SUP02" duration-ms="10402" started-at="2020-06-18T19:23:32Z" finished-at="2020-06-18T19:23:43Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SIT2_Environment_SUP02 -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@490ab905]" name="afterMethod" is-config="true" duration-ms="34" started-at="2020-06-18T19:23:43Z" finished-at="2020-06-18T19:23:43Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@56ac3a89]" name="afterMethod" is-config="true" duration-ms="20" started-at="2020-06-22T15:24:00Z" finished-at="2020-06-22T15:24:00Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=SIT2_Environment_SUP02 status=SUCCESS method=MVA10APIs_Suite2.SIT2_Environment_SUP02()[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@490ab905] output={null}]]]>
+                <![CDATA[[TestResult name=SIT2_Environment_SUP02 status=SUCCESS method=MVA10APIs_Suite2.SIT2_Environment_SUP02()[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@56ac3a89] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="tear()[pri:0, instance:RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2@56ac3a89]" name="tear" is-config="true" duration-ms="17" started-at="2020-06-22T15:24:00Z" finished-at="2020-06-22T15:24:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tear -->
       </class> <!-- RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2 -->
     </test> <!-- Tes1 -->
   </suite> <!-- testBeforeSuite -->

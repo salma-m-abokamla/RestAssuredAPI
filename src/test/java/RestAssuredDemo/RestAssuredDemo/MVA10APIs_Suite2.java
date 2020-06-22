@@ -2,6 +2,7 @@ package RestAssuredDemo.RestAssuredDemo;
 
 import static io.restassured.RestAssured.given;
 
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
@@ -10,7 +11,6 @@ import com.apitesting.listners.ExtentManager;
 import com.apitesting.listners.ExtentTestManager;
 
 import com.relevantcodes.extentreports.LogStatus;
-import org.testng.annotations.AfterSuite;
 
 import files.ReUsableMethods;
 import files.ResourceUrls;
@@ -115,12 +115,53 @@ public class MVA10APIs_Suite2 extends BaseClass {
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
 
 	}
+	@Test
+	public void QC1_Environment_E7() {
 
+		ReUsableMethods.generateExtentReport();
+		RestAssured.baseURI = CofigFileReader.getBaseUrlQC1SUP02();
+		hansoloResoureUR = ResourceUrls.hansoloResoureURL;
+		try {
+			hanSoloresponce = given().headers(ReUsableMethods.generalHeaders(CofigFileReader.getSubscriprionE7()))
+					.when().get(hansoloResoureUR).then().assertThat().statusCode(200).extract().response().asString();
+		} catch (AssertionError e) {
+			String failureMessage = "QC1 environment is down";
+			System.out.println(failureMessage);
+			ExtentTestManager.getTest().log(LogStatus.INFO, failureMessage);
+			ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+			return;
+
+		}
+
+		JsonPath js = ReUsableMethods.rawToJson(hanSoloresponce);
+		mspHansoloToken = js.getString("mspHansoloToken");
+
+		softTokenResoureURL = ResourceUrls.softTokenResoureURL;
+		String responce = null;
+		try {
+			responce = given().headers(ReUsableMethods.generalHeaders(CofigFileReader.getSubscriprionSUP02()))
+					.header("Msp-Hansolo-Token", mspHansoloToken).when().get(softTokenResoureURL).then().assertThat()
+					.statusCode(200).extract().response().asString();
+		} catch (AssertionError e) {
+
+			String failureMessage = "QC1 environment is down";
+			System.out.println(failureMessage);
+			ExtentTestManager.getTest().log(LogStatus.INFO, failureMessage);
+			ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+			return;
+
+		}
+		String sucessMessage = "QC1 environment on E7 is up and working fine";
+		System.out.println(sucessMessage);
+		ExtentTestManager.getTest().log(LogStatus.INFO, sucessMessage);
+		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+
+	}
 	@Test
 	public void SIT2_Environment_SUP02() {
 
 		ReUsableMethods.generateExtentReport();
-		RestAssured.baseURI = CofigFileReader.getBaseUrlSIT1SUP02();
+		RestAssured.baseURI = CofigFileReader.getBaseUrlSIT2SUP02();
 		hansoloResoureUR = ResourceUrls.hansoloResoureURL;
 		try {
 			hanSoloresponce = given().headers(ReUsableMethods.generalHeaders(CofigFileReader.getSubscriprionSUP02()))

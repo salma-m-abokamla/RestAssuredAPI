@@ -106,6 +106,11 @@ public class CofigFileReader {
 		return properties.getProperty("subscription.SUP02");
 
 	}
+	public static String getSubscriprionE7() {
+		readProperityFile();
+		return properties.getProperty("subscription.E7");
+
+	}
 
 	public static String getBaseUrlINT1SUP02() {
 		readProperityFile();
@@ -133,5 +138,6 @@ public class CofigFileReader {
 		return properties.getProperty("baseUrl.SIT2");
 
 	}
+	
 
 }

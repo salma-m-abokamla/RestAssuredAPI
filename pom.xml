@@ -44,7 +44,7 @@
                           <!-- Email Body Content -->
                           <htmlMessage>
                                     <![CDATA[
-                                    <p>Hello All,</p>
+                                     <p>Hello All,</p>
                                     <p>This is Automatically mail to determine which Env is down or up</p> 
                                     <p>Attached html file for test results</p>
                                     <p>Best Regards,</p>
@@ -63,8 +63,7 @@
                           <receivers>
                                <!-- To Email address -->
                                <receiver>salma.elmetwally2@vodafone.com</receiver>
-                              
-
+                          
                           </receivers>
                           <fileSets>
                              <fileSet>
