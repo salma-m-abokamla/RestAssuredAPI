@@ -27,7 +27,7 @@ public class MVA10APIs_Suite2 extends BaseClass {
 	public String hansoloResoureUR;
 	public String hanSoloresponce;
 	public String softTokenResoureURL;
-	
+
 	@Test
 	public void INT1_Environment_SUP02() {
 
@@ -157,7 +157,7 @@ public class MVA10APIs_Suite2 extends BaseClass {
 	public void SIT2_Environment_SUP02() {
 
 		ReUsableMethods.generateExtentReport();
-		RestAssured.baseURI = CofigFileReader.getBaseUrlSIT1SUP02();
+		RestAssured.baseURI = CofigFileReader.getBaseUrlSIT2SUP02();
 		hansoloResoureUR = ResourceUrls.hansoloResoureURL;
 		try {
 			hanSoloresponce = given().headers(ReUsableMethods.generalHeaders(CofigFileReader.getSubscriprionSUP02()))
