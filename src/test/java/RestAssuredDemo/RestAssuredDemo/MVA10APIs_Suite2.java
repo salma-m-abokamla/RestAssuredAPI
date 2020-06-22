@@ -161,7 +161,7 @@ public class MVA10APIs_Suite2 extends BaseClass {
 	public void SIT2_Environment_SUP02() {
 
 		ReUsableMethods.generateExtentReport();
-		RestAssured.baseURI = CofigFileReader.getBaseUrlSIT2SUP02();
+		RestAssured.baseURI = CofigFileReader.getBaseUrlSIT1SUP02();
 		hansoloResoureUR = ResourceUrls.hansoloResoureURL;
 		try {
 			hanSoloresponce = given().headers(ReUsableMethods.generalHeaders(CofigFileReader.getSubscriprionSUP02()))
