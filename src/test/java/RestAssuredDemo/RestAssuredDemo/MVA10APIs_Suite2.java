@@ -161,13 +161,13 @@ public class MVA10APIs_Suite2 extends BaseClass {
 	public void SIT2_Environment_SUP02() {
 
 		ReUsableMethods.generateExtentReport();
-		RestAssured.baseURI = CofigFileReader.getBaseUrlSIT1SUP02();
+		RestAssured.baseURI = CofigFileReader.getBaseUrlSIT2SUP02();
 		hansoloResoureUR = ResourceUrls.hansoloResoureURL;
 		try {
 			hanSoloresponce = given().headers(ReUsableMethods.generalHeaders(CofigFileReader.getSubscriprionSUP02()))
 					.when().get(hansoloResoureUR).then().assertThat().statusCode(200).extract().response().asString();
 		} catch (AssertionError e) {
-			String failureMessage = "SIT1 environment is down";
+			String failureMessage = "SIT2 environment is down";
 			System.out.println(failureMessage);
 			ExtentTestManager.getTest().log(LogStatus.INFO, failureMessage);
 			ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
@@ -185,13 +185,13 @@ public class MVA10APIs_Suite2 extends BaseClass {
 					.statusCode(200).extract().response().asString();
 		} catch (AssertionError e) {
 
-			String failureMessage = "SIT1 environment is down";
+			String failureMessage = "SIT2 environment is down";
 			System.out.println(failureMessage);
 			ExtentTestManager.getTest().log(LogStatus.INFO, failureMessage);
 			ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
 			return;
 		}
-		String sucessMessage = "SIT1 environment on SUP02 is up and working fine";
+		String sucessMessage = "SIT2 environment on SUP02 is up and working fine";
 		System.out.println(sucessMessage);
 		ExtentTestManager.getTest().log(LogStatus.INFO, sucessMessage);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
