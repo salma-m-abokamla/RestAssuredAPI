@@ -15,6 +15,18 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- task: replacetokens@3
+  inputs:
+    targetFiles: '**/*properties'
+    encoding: 'auto'
+    writeBOM: true
+    actionOnMissing: 'warn'
+    keepToken: false
+    tokenPrefix: '#{'
+    tokenSuffix: '}#'
+    useLegacyPattern: false
+    enableTelemetry: true
+
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
