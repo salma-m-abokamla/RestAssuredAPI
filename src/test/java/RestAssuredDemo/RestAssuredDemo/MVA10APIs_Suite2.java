@@ -172,15 +172,14 @@ public class MVA10APIs_Suite2 extends BaseClass {
 			ExtentTestManager.getTest().log(LogStatus.INFO, failureMessage);
 			ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
 			return;
-
 		}
 
-		JsonPath js = ReUsableMethods.rawToJson(hanSoloresponce);
-		mspHansoloToken = js.getString("mspHansoloToken");
-
-		softTokenResoureURL = ResourceUrls.softTokenResoureURL;
-		String responce = null;
 		try {
+			JsonPath js = ReUsableMethods.rawToJson(hanSoloresponce);
+			mspHansoloToken = js.getString("mspHansoloToken");
+
+			softTokenResoureURL = ResourceUrls.softTokenResoureURL;
+			String responce = null;
 			responce = given().headers(ReUsableMethods.generalHeaders(CofigFileReader.getSubscriprionSUP02()))
 					.header("Msp-Hansolo-Token", mspHansoloToken).when().get(softTokenResoureURL).then().assertThat()
 					.statusCode(200).extract().response().asString();
@@ -191,7 +190,6 @@ public class MVA10APIs_Suite2 extends BaseClass {
 			ExtentTestManager.getTest().log(LogStatus.INFO, failureMessage);
 			ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
 			return;
-
 		}
 		String sucessMessage = "SIT2 environment on SUP02 is up and working fine";
 		System.out.println(sucessMessage);
