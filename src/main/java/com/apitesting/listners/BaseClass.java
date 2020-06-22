@@ -5,8 +5,12 @@ import java.lang.reflect.Method;
 
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.relevantcodes.extentreports.LogStatus;
 
 /**
@@ -15,7 +19,10 @@ import com.relevantcodes.extentreports.LogStatus;
  *
  */
 public abstract class BaseClass {
-   
+    public static ExtentReports extent =new ExtentReports();//initiating here is very important
+
+    public static ExtentHtmlReporter htmlReporter;
+
 	/**
 	 * 
 	 * @param method
@@ -24,7 +31,16 @@ public abstract class BaseClass {
     public void beforeMethod(Method method) {
         ExtentTestManager.startTest(method.getName());
     }
-    
+	@BeforeSuite
+    public void beforeSuiteSetup() {
+        String filepath = System.getProperty("user.dir");
+        htmlReporter = new ExtentHtmlReporter(filepath+"/Report.html");     
+        extent.attachReporter(htmlReporter);
+    }
+	@AfterSuite(alwaysRun = true)
+    public void afterSuite() {
+        extent.flush();
+    }
 	/**
 	 * 
 	 * @param result
