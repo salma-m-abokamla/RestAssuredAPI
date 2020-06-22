@@ -27,11 +27,7 @@ public class MVA10APIs_Suite2 extends BaseClass {
 	public String hansoloResoureUR;
 	public String hanSoloresponce;
 	public String softTokenResoureURL;
-	@AfterSuite
-    public void tear()
-    {
-		ExtentManager.extent.flush();
-    }
+	
 	@Test
 	public void INT1_Environment_SUP02() {
 
