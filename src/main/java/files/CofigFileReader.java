@@ -50,9 +50,9 @@ public class CofigFileReader {
 
 				break;
 			case "QC1":
-				properties.setProperty("subscription", "447386011953");
+				properties.setProperty("subscription", "447389768879");
 				properties.setProperty("baseUrl", "https://mvax.dx-qc1-common.digital.vodafoneaws.co.uk");
-				properties.setProperty("userName", "DNU_S2_7000330528");
+				properties.setProperty("userName", "DNU7000386844 ");
 				// store the values
 				properties.store(outputStream, null);
 				properties.load(new FileInputStream(propertyFilePath));
