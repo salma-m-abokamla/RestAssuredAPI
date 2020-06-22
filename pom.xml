@@ -63,10 +63,7 @@
                           <receivers>
                                <!-- To Email address -->
                                <receiver>salma.elmetwally2@vodafone.com</receiver>
-                               <receiver>dalia.ali4@vodafone.com</receiver>
-                               <receiver>mennatullah.elgohary1@vodafone.com</receiver>
-                               <receiver>nouran.zaher2@vodafone.com</receiver>
-                               <receiver>nourhan.eltorky1@vodafone.com</receiver>
+
                           </receivers>
                           <fileSets>
                              <fileSet>
