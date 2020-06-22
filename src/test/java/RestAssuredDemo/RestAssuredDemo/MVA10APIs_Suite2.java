@@ -29,7 +29,7 @@ public class MVA10APIs_Suite2 extends BaseClass {
 	public String softTokenResoureURL;
 
 	@Test
-	public void INT1_Environment_SUP02() {
+	public void INT1_Environment_SUP02_() {
 
 		ReUsableMethods.generateExtentReport();
 		RestAssured.baseURI = CofigFileReader.getBaseUrlINT1SUP02();
