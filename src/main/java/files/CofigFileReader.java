@@ -58,7 +58,35 @@ public class CofigFileReader {
 				properties.load(new FileInputStream(propertyFilePath));
 
 				break;
+			case "SIT1":
+				properties.setProperty("subscription", "447386011953");
+				properties.setProperty("baseUrl", "https://mvax-sit1.newvoe.eu");
+				properties.setProperty("userName", "DNU_S2_7000330528");
+				// store the values
+				properties.store(outputStream, null);
+				properties.load(new FileInputStream(propertyFilePath));
 
+				break;
+		    case "SIT2":
+				properties.setProperty("subscription", "447386011953");
+				properties.setProperty("baseUrl", "https://mvax-sit2.newvoe.eu");
+				properties.setProperty("userName", "DNU_S2_7000330528");
+				// store the values
+				properties.store(outputStream, null);
+				properties.load(new FileInputStream(propertyFilePath));
+
+				break;
+				
+			case "DEV":
+				properties.setProperty("subscription", "447386011953");
+				properties.setProperty("baseUrl", "https://mvax.dx-dev.digital.vodafoneaws.co.uk");
+				properties.setProperty("userName", "DNU_S2_7000330528");
+				// store the values
+				properties.store(outputStream, null);
+				properties.load(new FileInputStream(propertyFilePath));
+
+				break;
+					
 			}
 
 		} catch (IOException e) {
