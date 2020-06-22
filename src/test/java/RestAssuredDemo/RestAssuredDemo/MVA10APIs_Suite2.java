@@ -10,6 +10,7 @@ import com.apitesting.listners.ExtentManager;
 import com.apitesting.listners.ExtentTestManager;
 
 import com.relevantcodes.extentreports.LogStatus;
+import org.testng.annotations.AfterSuite;
 
 import files.ReUsableMethods;
 import files.ResourceUrls;
@@ -26,7 +27,7 @@ public class MVA10APIs_Suite2 extends BaseClass {
 	public String hansoloResoureUR;
 	public String hanSoloresponce;
 	public String softTokenResoureURL;
-	@BeforeSuite
+	@AfterSuite
     public void tear()
     {
 		ExtentManager.extent.flush();
