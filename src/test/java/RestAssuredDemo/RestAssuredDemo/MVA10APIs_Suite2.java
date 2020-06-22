@@ -154,7 +154,7 @@ public class MVA10APIs_Suite2 extends BaseClass {
 
 	}
 	@Test
-	public void SIT2_Environment_SUP02_() {
+	public void SIT2_Environment_SUP02() {
 
 		ReUsableMethods.generateExtentReport();
 		RestAssured.baseURI = CofigFileReader.getBaseUrlSIT2SUP02();
