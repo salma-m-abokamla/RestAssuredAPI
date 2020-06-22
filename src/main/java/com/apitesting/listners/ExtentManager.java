@@ -3,7 +3,7 @@ package com.apitesting.listners;
 import com.relevantcodes.extentreports.ExtentReports;
 
 public class ExtentManager {
-    static ExtentReports extent;
+    public static ExtentReports extent;
     final static String filePath = "./test-output/html/Extent.html";
     
     public synchronized static ExtentReports getReporter() {
