@@ -534,7 +534,7 @@ public class MVA10APIs_Suite extends BaseClass {
 
 		ReUsableMethods.generateExtentReport();
 		RestAssured.baseURI = baseURL;
-		accountsResoureURL = ResourceUrls.accountsResoureURL;
+		accountsResoureURL = ResourceUrls.accountListsResoureURL;
 
 		subsListsResponce = given().headers(ReUsableMethods.generalHeaders(subscription))
 				.header("Full-Access-Token", fullAccessToken).header("JWT", backendJwtSoftToken)
