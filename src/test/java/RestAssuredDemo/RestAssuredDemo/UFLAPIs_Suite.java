@@ -80,7 +80,7 @@ public class UFLAPIs_Suite extends BaseClass {
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
 
 	}
-	@Test()
+	@Test(priority = 2)
 	public void SendOTAC() {
 
 		ReUsableMethods.generateExtentReport();
