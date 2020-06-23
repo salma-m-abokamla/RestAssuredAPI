@@ -87,7 +87,7 @@
                        </configuration>
                    </execution>
                    <execution>
-                       <id>Report Generation</id>
+                       <id>Report Generation1</id>
                        <phase>test</phase>
                        <goals>
                            <goal>send-mail</goal>
