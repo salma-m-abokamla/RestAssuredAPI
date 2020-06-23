@@ -174,7 +174,7 @@ public class UFLAPIs_Suite extends BaseClass {
 
 	}
 
-	@Test(priority = 6)
+	/*@Test(priority = 6)
 	public void ChangePin() {
 
 		ReUsableMethods.generateExtentReport();
@@ -193,5 +193,5 @@ public class UFLAPIs_Suite extends BaseClass {
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
 
-	}
+	}*/
 }
