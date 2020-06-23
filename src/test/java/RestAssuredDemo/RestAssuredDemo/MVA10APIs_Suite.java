@@ -242,7 +242,7 @@ public class MVA10APIs_Suite extends BaseClass {
 
 	}
 
-	/*@Test(priority = 8 )
+	@Test(priority = 8 )
 	public void VeryMe( ) {
 
 		ReUsableMethods.generateExtentReport();
@@ -263,7 +263,7 @@ public class MVA10APIs_Suite extends BaseClass {
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
 
 	}
-*/
+
 	@Test(priority = 9 )
 	public void Discover( ) {
 
