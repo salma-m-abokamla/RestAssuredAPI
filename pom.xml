@@ -100,6 +100,11 @@
                           <subject>Rest Assured Test Automation Report</subject>
                           <!-- Fail the build if the mail doesn't reach -->
                           <failonerror>false</failonerror>
+                          <htmlMessage>
+                                    <![CDATA[
+                                    <p>Check Status for Environment Availability</p>
+                                    ]]>
+                          </htmlMessage>
                           <!-- host -->
                           <mailhost>smtp.gmail.com</mailhost>
                           <!-- port of the host -->
