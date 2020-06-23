@@ -23,7 +23,7 @@ public class ResourceUrls {
 	public static final String subscriptionSwitchResoureURL = "/app/api/v1/subscriptionSwitch";
 	public static final String vovResoureURL = "/app/api/v1/vov";
 	public static final String passwordLoginResoureURL = "/app/api/v2/passwordLogin";
-	public static final String accountsResoureURL = "/app/api/v1/accounts/";
+	public static final String accountsResoureURL = "/app/api/v1/accounts";
 	public static final String accountListsResoureURL = "/app/api/v1/accounts/";
 	public static final String registeredNumbersResoureURL = "/app/api/v1/registeredNumbers";
 	public static final String sendOTACResoureURL = "/app/api/v1/sendOTAC";
