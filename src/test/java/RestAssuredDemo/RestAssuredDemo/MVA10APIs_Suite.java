@@ -534,7 +534,7 @@ public class MVA10APIs_Suite extends BaseClass {
 
 		ReUsableMethods.generateExtentReport();
 		RestAssured.baseURI = baseURL;
-		accountsResoureURL = ResourceUrls.accountListsResoureURL;
+		accountsResoureURL = ResourceUrls.accountsResoureURL;
 
 		subsListsResponce = given().headers(ReUsableMethods.generalHeaders(subscription))
 				.header("Full-Access-Token", fullAccessToken).header("JWT", backendJwtSoftToken)
@@ -542,7 +542,7 @@ public class MVA10APIs_Suite extends BaseClass {
 				.header("accountType", accountType).header("Parent-Subscription-Type", subscriptionType)
 				.header("Segment", segment).header("Subscription-Type", subscriptionType)
 				.header("Root-Full-Access-Token", fullAccessToken).when()
-				.get(accountsResoureURL.concat("{accountId}").concat("/subscriptions"), accountId).then()
+				.get(accountsResoureURL.concat("/{accountId}").concat("/subscriptions"), accountId).then()
 				.assertThat().statusCode(200).extract().response().asString();
 
 		System.out.println("GetSubscriptionsList Responce is \n" + subsListsResponce  );
