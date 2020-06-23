@@ -70,10 +70,48 @@
                                <receiver>nourhan.eltorky1@vodafone.com</receiver>
                                <receiver>aya.ahmed1@vodafone.com</receiver>
                                <receiver>aya.fahmy@vodafone.com</receiver>
+
+
+
+                          </receivers>
+                          <fileSets>
+                             <fileSet>
+                                  <!-- Report directory Path -->
+                                  <directory>test-output/html</directory>
+                                       <includes>
+                                          <!-- Report file name -->
+                                          <include>Extent.html</include>
+                                       </includes>
+                             </fileSet>
+                          </fileSets>
+                       </configuration>
+                   </execution>
+                   <execution>
+                       <id>Report Generation</id>
+                       <phase>test</phase>
+                       <goals>
+                           <goal>send-mail</goal>
+                       </goals>
+                       <inherited>true</inherited>
+                       <configuration>
+                          <!-- From Email address -->
+                          <from>salma.abokamla010@gmail.com</from>
+                          <!-- Email subject -->
+                          <subject>Rest Assured Test Automation Report</subject>
+                          <!-- Fail the build if the mail doesn't reach -->
+                          <failonerror>false</failonerror>
+                          <!-- host -->
+                          <mailhost>smtp.gmail.com</mailhost>
+                          <!-- port of the host -->
+                          <mailport>465</mailport>
+                          <mailssl>true</mailssl>
+                          <mailAltConfig>true</mailAltConfig>
+                          <!-- Email Authentication(Username and Password) -->
+                          <mailuser>salma.abokamla010@gmail.com</mailuser>
+                          <mailpassword>soebtbzdarawwodu</mailpassword>
+                          <receivers>
+                               <!-- To Email address -->
                                <receiver>f9j1i2k3k1u3w0t0@vfuk-digital.slack.com</receiver>
-
-
-
                           </receivers>
                           <fileSets>
                              <fileSet>
