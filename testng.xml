@@ -4,10 +4,17 @@
 <suite name="testBeforeSuite">
 
 
-	<test thread-count="5" name="Tes1">
+	<test thread-count="5" name="MVA10_APIs">
 
 		<classes>
 			<class name="RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test thread-count="5" name="UFL_APIs">
+
+		<classes>
+			<class name="RestAssuredDemo.RestAssuredDemo.UFLAPIs_Suite" />
 		</classes>
 	</test> <!-- Test -->
 	
