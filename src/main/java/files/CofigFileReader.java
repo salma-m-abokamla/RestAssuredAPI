@@ -41,9 +41,9 @@ public class CofigFileReader {
 
 			switch (deploymentEnv) {
 			case "INT1":
-				properties.setProperty("subscription", "447389841597");
+				properties.setProperty("subscription", "447386011953");
 				properties.setProperty("baseUrl", "https://mvax.dx-int1-common.digital.vodafoneaws.co.uk");
-				properties.setProperty("userName", "SANCHIT01");
+				properties.setProperty("userName", "DNU_S2_7000330528");
 				// store the values
 				properties.store(outputStream, null);
 				properties.load(new FileInputStream(propertyFilePath));
