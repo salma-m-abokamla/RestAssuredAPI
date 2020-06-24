@@ -12,7 +12,7 @@ schedules:
     include:
     - Env_Monitoring
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'windows-latest'
 
 steps:
 - task: Maven@3
