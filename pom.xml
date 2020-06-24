@@ -118,11 +118,6 @@
 	</build>
 
 	<dependencies>
-	 <dependency>
-        <groupId>ru.yandex.qatools.allure</groupId>
-        <artifactId>allure-junit-adaptor</artifactId>
-        <version>1.8.13</version>
-    </dependency>
 	<dependency>
 	<groupId>io.qameta.allure</groupId>
 	<artifactId>allure-testng</artifactId>
