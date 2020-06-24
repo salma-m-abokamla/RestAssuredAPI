@@ -25,6 +25,7 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+    
 - task: AllureGenerate@1
   inputs:
     resultsDir: 'allure-results'
