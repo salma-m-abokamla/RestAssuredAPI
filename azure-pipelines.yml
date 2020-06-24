@@ -32,6 +32,7 @@ steps:
       sudo npm cache verify
       
       sudo npm install --cache /tmp/empty-cache
+      sudo npm audit fix
     
            
 
