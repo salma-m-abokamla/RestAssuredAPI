@@ -29,10 +29,7 @@ steps:
 - task: CmdLine@2
   inputs:
     script: |
-      sudo npm cache verify
-      
-      sudo npm install --cache /tmp/empty-cache
-      sudo npm audit fix
+    sudo npm audit fix
     
            
 
