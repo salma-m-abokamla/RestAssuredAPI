@@ -89,8 +89,8 @@ public class MVA10APIs_Suite extends BaseClass {
 		CofigFileReader.setDeploymentEnv();
 		baseURL=CofigFileReader.getBaseUrl();
 		tilEnv=CofigFileReader.getTilEnv();
-		System.out.print("BaseUrl :"+baseURL);
-		System.out.print("TilEnv :"+tilEnv);
+		System.out.println("BaseUrl :"+baseURL);
+		System.out.println("TilEnv :"+tilEnv);
 		subscription=CofigFileReader.getSubscriprion();
 		userName=CofigFileReader.getUserName();
 		
