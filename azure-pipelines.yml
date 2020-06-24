@@ -15,6 +15,11 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- task: AllureGenerate@1
+  inputs:
+    resultsDir: 'allure-results'
+    targetDir: 'allure-report/$(Build.BuildNumber)'   
+
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
@@ -26,15 +31,6 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
 
-- task: CmdLine@2
-  inputs:
-    script: |
-    sudo npm audit fix
     
-           
-
-- task: AllureGenerate@1
-  inputs:
-    resultsDir: 'allure-results'
-    targetDir: 'allure-report/$(Build.BuildNumber)'    
+ 
 
