@@ -8,8 +8,7 @@
 	<properties>
 		<aspectj.version>1.8.13</aspectj.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	    <allure.version>1.8.13</allure.version>
-
+		
 	</properties>
 
 	<build>
@@ -30,12 +29,6 @@
 					<argLine>
 						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/1.8.13/aspectjweaver-1.8.13.jar"
 				</argLine>
-				<properties>
-                    <property>
-                        <name>listener</name>
-                        <value>ru.yandex.qatools.allure.junit.AllureRunListener</value>
-                    </property>
-                </properties>
 				</configuration>
 				<dependencies>
 				<dependency>
