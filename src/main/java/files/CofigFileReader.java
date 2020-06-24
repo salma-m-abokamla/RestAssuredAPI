@@ -91,6 +91,31 @@ public class CofigFileReader {
 				}
 
 				break;
+			case "DEV1":
+				if (tilEnv.equalsIgnoreCase("SUP02")) {
+					properties.setProperty("subscription", "447386011953");
+					properties.setProperty("baseUrl", "https://mvax.dx-dev1-common.digital.vodafoneaws.co.uk");
+					properties.setProperty("userName", "DNU_S2_7000330528");
+					// store the values
+					properties.store(outputStream, null);
+					properties.load(new FileInputStream(propertyFilePath));
+				} else if (tilEnv.equalsIgnoreCase("E7")) {
+					properties.setProperty("subscription", "447389768879");
+					properties.setProperty("baseUrl", "https://mvax.dx-dev1-common.digital.vodafoneaws.co.uk");
+					properties.setProperty("userName", "DNU7000386844");
+					// store the values
+					properties.store(outputStream, null);
+					properties.load(new FileInputStream(propertyFilePath));
+				} else if (tilEnv.equalsIgnoreCase("E4")) {
+					properties.setProperty("subscription", "447387926001");
+					properties.setProperty("baseUrl", "https://mvax.dx-dev1-common.digital.vodafoneaws.co.uk");
+					properties.setProperty("userName", "MYVAR65_7000260567");
+					// store the values
+					properties.store(outputStream, null);
+					properties.load(new FileInputStream(propertyFilePath));
+				}
+
+				break;
 			case "SIT1":
 				if (tilEnv.equalsIgnoreCase("SUP02")) {
 					properties.setProperty("subscription", "447386011953");
