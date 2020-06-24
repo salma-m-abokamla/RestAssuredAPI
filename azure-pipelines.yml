@@ -27,7 +27,10 @@ steps:
     goals: 'package'
 - task: CmdLine@2
   inputs:
-    script: 'echo npm install allure-commandline@1.4.22-1'    
+    script: 'sudo npm install allure-commandline@1.4.22-1'    
+- task: CmdLine@2
+  inputs:
+    script: 'sudo npm start'    
 - task: AllureGenerate@1
   inputs:
     resultsDir: 'allure-results'
