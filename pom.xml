@@ -54,7 +54,7 @@
 							<!-- From Email address -->
 							<from>salma.abokamla010@gmail.com</from>
 							<!-- Email subject -->
-							<subject>Rest Assured Test Automation Report</subject>
+							<subject>Environment Availability Status</subject>
 							<!-- Fail the build if the mail doesn't reach -->
 							<failonerror>false</failonerror>
 							<!-- Email Body Content -->
@@ -108,7 +108,7 @@
 							<!-- From Email address -->
 							<from>salma.abokamla010@gmail.com</from>
 							<!-- Email subject -->
-							<subject>Rest Assured Test Automation Report</subject>
+							<subject>Environment Availability Status</subject>
 							<!-- Fail the build if the mail doesn't reach -->
 							<failonerror>false</failonerror>
 							<!-- Email Body Content -->
