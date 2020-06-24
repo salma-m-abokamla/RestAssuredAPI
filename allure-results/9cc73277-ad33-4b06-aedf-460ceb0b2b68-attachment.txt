@@ -1,1 +1,0 @@
-INT1 environment on SUP02 is up and working fine
