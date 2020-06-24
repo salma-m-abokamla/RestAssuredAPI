@@ -5,45 +5,60 @@
 	<groupId>RestAssuredPipeline</groupId>
 	<artifactId>RestAssuredPipeline</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-<properties>
+	<properties>
 		<aspectj.version>1.8.13</aspectj.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		
 	</properties>
 
-       <build>
+	<build>
 		<plugins>
-		<plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.19.1</version>
-        <configuration>
-                <suiteXmlFiles>
-            <suiteXmlFile>testng.xml</suiteXmlFile>
-          </suiteXmlFiles>
-                  
-        </configuration>
-      </plugin>
-         <plugin>
-            <groupId>ch.fortysix</groupId>
-            <artifactId>maven-postman-plugin</artifactId>
-            <version>0.1.6</version>
-                <executions>
-                   <execution>
-                       <id>Report Generation</id>
-                       <phase>test</phase>
-                       <goals>
-                           <goal>send-mail</goal>
-                       </goals>
-                       <inherited>true</inherited>
-                       <configuration>
-                          <!-- From Email address -->
-                          <from>salma.abokamla010@gmail.com</from>
-                          <!-- Email subject -->
-                          <subject>Rest Assured Test Automation Report</subject>
-                          <!-- Fail the build if the mail doesn't reach -->
-                          <failonerror>false</failonerror>
-                          <!-- Email Body Content -->
-                          <htmlMessage>
+		
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.19.1</version>
+				<configuration>
+				        <testFailureIgnore>true</testFailureIgnore>
+				
+				                <forkedProcessExitTimeoutInSeconds>120</forkedProcessExitTimeoutInSeconds>
+				
+					<suiteXmlFiles>
+						<suiteXmlFile>testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+					<argLine>
+						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/1.8.13/aspectjweaver-1.8.13.jar"
+				</argLine>
+				</configuration>
+				<dependencies>
+				<dependency>
+					<groupId>org.aspectj</groupId>
+					<artifactId>aspectjweaver</artifactId>
+					<version>1.8.13</version>
+				</dependency>
+			</dependencies>
+			</plugin>
+			<plugin>
+				<groupId>ch.fortysix</groupId>
+				<artifactId>maven-postman-plugin</artifactId>
+				<version>0.1.6</version>
+				<executions>
+					<execution>
+						<id>Report Generation</id>
+						<phase>test</phase>
+						<goals>
+							<goal>send-mail</goal>
+						</goals>
+						<inherited>true</inherited>
+						<configuration>
+							<!-- From Email address -->
+							<from>salma.abokamla010@gmail.com</from>
+							<!-- Email subject -->
+							<subject>Rest Assured Test Automation Report</subject>
+							<!-- Fail the build if the mail doesn't reach -->
+							<failonerror>false</failonerror>
+							<!-- Email Body Content -->
+							<htmlMessage>
                                     <![CDATA[
                                      <p>Hello All,</p>
                                     <p>This is Automatically mail to determine which Env is down or up</p> 
@@ -51,106 +66,62 @@
                                     <p>Best Regards,</p>
                                     <p>Salma</p>
                                     ]]>
-                          </htmlMessage>
-                          <!-- host -->
-                          <mailhost>smtp.gmail.com</mailhost>
-                          <!-- port of the host -->
-                          <mailport>465</mailport>
-                          <mailssl>true</mailssl>
-                          <mailAltConfig>true</mailAltConfig>
-                          <!-- Email Authentication(Username and Password) -->
-                          <mailuser>salma.abokamla010@gmail.com</mailuser>
-                          <mailpassword>soebtbzdarawwodu</mailpassword>
-                          <receivers>
-                               <!-- To Email address -->
-                               <receiver>salma.elmetwally2@vodafone.com</receiver>
-                               <receiver>mennatullah.elgohary1@vodafone.com</receiver>
-                               <receiver>dalia.ali4@vodafone.com</receiver>
-                               <receiver>nouran.zaher2@vodafone.com</receiver>
-                               <receiver>nourhan.eltorky1@vodafone.com</receiver>
-                               <receiver>aya.ahmed1@vodafone.com</receiver>
-                               <receiver>aya.fahmy@vodafone.com</receiver>
-                               <receiver>MVAUKTest@internal.vodafone.com</receiver>
+							</htmlMessage>
+							<!-- host -->
+							<mailhost>smtp.gmail.com</mailhost>
+							<!-- port of the host -->
+							<mailport>465</mailport>
+							<mailssl>true</mailssl>
+							<mailAltConfig>true</mailAltConfig>
+							<!-- Email Authentication(Username and Password) -->
+							<mailuser>salma.abokamla010@gmail.com</mailuser>
+							<mailpassword>soebtbzdarawwodu</mailpassword>
+							<receivers>
+								<!-- To Email address -->
+								<receiver>salma.elmetwally2@vodafone.com</receiver>
 
+							</receivers>
+							<fileSets>
+								<fileSet>
+									<!-- Report directory Path -->
+									<directory>test-output/html</directory>
+									<includes>
+										<!-- Report file name -->
+										<include>Extent.html</include>
+									</includes>
+								</fileSet>
+							</fileSets>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
 
-
-
-                          </receivers>
-                          <fileSets>
-                             <fileSet>
-                                  <!-- Report directory Path -->
-                                  <directory>test-output/html</directory>
-                                       <includes>
-                                          <!-- Report file name -->
-                                          <include>Extent.html</include>
-                                       </includes>
-                             </fileSet>
-                          </fileSets>
-                       </configuration>
-                   </execution>
-                   <execution>
-                       <id>Report Generation1</id>
-                       <phase>test</phase>
-                       <goals>
-                           <goal>send-mail</goal>
-                       </goals>
-                       <inherited>true</inherited>
-                       <configuration>
-                          <!-- From Email address -->
-                          <from>salma.abokamla010@gmail.com</from>
-                          <!-- Email subject -->
-                          <subject>Rest Assured Test Automation Report</subject>
-                          <!-- Fail the build if the mail doesn't reach -->
-                          <failonerror>false</failonerror>
-                          <htmlMessage>
-                                    <![CDATA[
-                                    <p>Check Status for Environment Availability</p>
-                                    ]]>
-                          </htmlMessage>
-                          <!-- host -->
-                          <mailhost>smtp.gmail.com</mailhost>
-                          <!-- port of the host -->
-                          <mailport>465</mailport>
-                          <mailssl>true</mailssl>
-                          <mailAltConfig>true</mailAltConfig>
-                          <!-- Email Authentication(Username and Password) -->
-                          <mailuser>salma.abokamla010@gmail.com</mailuser>
-                          <mailpassword>soebtbzdarawwodu</mailpassword>
-                          <receivers>
-                               <!-- To Email address -->
-                               <receiver>f9j1i2k3k1u3w0t0@vfuk-digital.slack.com</receiver>
-                          </receivers>
-                          <fileSets>
-                             <fileSet>
-                                  <!-- Report directory Path -->
-                                  <directory>test-output/html</directory>
-                                       <includes>
-                                          <!-- Report file name -->
-                                          <include>Extent.html</include>
-                                       </includes>
-                             </fileSet>
-                          </fileSets>
-                       </configuration>
-                   </execution>
-                </executions>
-         </plugin>
-		 <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.5.1</version>
-            <configuration>
-                <source>1.8</source>
-                <target>1.8</target>
-            </configuration>
-        </plugin>
-			
 			<!-- Added Surefire Plugin configuration to execute tests -->
-			
+
 		</plugins>
 	</build>
-	
-	<dependencies>
 
+	<dependencies>
+	<dependency>
+	<groupId>io.qameta.allure</groupId>
+	<artifactId>allure-testng</artifactId>
+	<version>2.9.0</version>
+</dependency>
+		<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-rest-assured -->
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-rest-assured</artifactId>
+			<version>2.13.0</version>
+		</dependency>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
@@ -180,7 +151,7 @@
 			<artifactId>Aeye</artifactId>
 			<version>1.1</version>
 		</dependency>
-	<dependency>
+		<dependency>
 			<groupId>com.jayway.jsonpath</groupId>
 			<artifactId>json-path</artifactId>
 			<version>2.2.0</version>
@@ -207,13 +178,13 @@
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
 		</dependency>
-<dependency>
-    <groupId>io.rest-assured</groupId>
-    <artifactId>rest-assured</artifactId>
-    <version>3.0.0</version>
-    <scope>compile</scope>
-</dependency>
-		
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>3.0.0</version>
+			<scope>compile</scope>
+		</dependency>
+
 	</dependencies>
 
 </project>
