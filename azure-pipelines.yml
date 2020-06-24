@@ -25,9 +25,15 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+
 - task: CmdLine@2
   inputs:
-    script: 'sudo npm install -g allure-commandline --save-dev'    
+    script: 'sudo  npm cache clean' 
+    
+- task: CmdLine@2
+  inputs:
+    script: 'sudo npm install' 
+           
 
 - task: AllureGenerate@1
   inputs:
