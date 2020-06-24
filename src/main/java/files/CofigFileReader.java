@@ -192,4 +192,9 @@ public class CofigFileReader {
 		return properties.getProperty("userName");
 
 	}
+	public static String getTilEnv() {
+		readProperityFile();
+		return properties.getProperty("tilEnv");
+
+	}
 }
