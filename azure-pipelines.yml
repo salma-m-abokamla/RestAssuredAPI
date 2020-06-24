@@ -15,11 +15,6 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: AllureGenerate@1
-  inputs:
-    resultsDir: 'allure-results'
-    targetDir: 'allure-report/$(Build.BuildNumber)'   
-
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
@@ -30,6 +25,12 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+
+ - task: AllureGenerate@1
+  inputs:
+    resultsDir: 'allure-results'
+    targetDir: 'allure-report/$(Build.BuildNumber)'   
+   
 
     
  
