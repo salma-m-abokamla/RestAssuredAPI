@@ -91,7 +91,7 @@ public class CofigFileReader {
 				}
 
 				break;
-			case "DEV1":
+			case "dev1":
 				if (tilEnv.equalsIgnoreCase("SUP02")) {
 					properties.setProperty("subscription", "447386011953");
 					properties.setProperty("baseUrl", "https://mvax.dx-dev1-common.digital.vodafoneaws.co.uk");
