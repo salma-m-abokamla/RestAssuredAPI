@@ -38,7 +38,9 @@ public class CofigFileReader {
 	public static void setDeploymentEnv() {
 		readProperityFile();
 		deploymentEnv= properties.getProperty("deploymentEnv");
+		System.out.println("deploymentEnv:"+deploymentEnv);
 		tilEnv = properties.getProperty("tilEnv");
+		System.out.println("tilEnv:"+tilEnv);
 		try (OutputStream outputStream = new FileOutputStream(propertyFilePath)) {
 
 			switch (deploymentEnv) {
