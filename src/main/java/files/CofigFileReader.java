@@ -42,7 +42,7 @@ public class CofigFileReader {
 		try (OutputStream outputStream = new FileOutputStream(propertyFilePath)) {
 
 			switch (deploymentEnv) {
-			case "INT1":
+			case "int1":
 				if (tilEnv.equalsIgnoreCase("SUP02")) {
 					properties.setProperty("subscription", "447386011953");
 					properties.setProperty("baseUrl", "https://mvax.dx-int1-common.digital.vodafoneaws.co.uk");
@@ -66,7 +66,7 @@ public class CofigFileReader {
 					properties.load(new FileInputStream(propertyFilePath));
 				}
 				break;
-			case "QC1":
+			case "qc1":
 				if (tilEnv.equalsIgnoreCase("SUP02")) {
 					properties.setProperty("subscription", "447386011953");
 					properties.setProperty("baseUrl", "https://mvax.dx-qc1-common.digital.vodafoneaws.co.uk");
@@ -116,7 +116,7 @@ public class CofigFileReader {
 				}
 
 				break;
-			case "SIT1":
+			case "sit1":
 				if (tilEnv.equalsIgnoreCase("SUP02")) {
 					properties.setProperty("subscription", "447386011953");
 					properties.setProperty("baseUrl", "https://mvax-sit1.newvoe.eu");
@@ -141,7 +141,7 @@ public class CofigFileReader {
 				}
 
 				break;
-			case "SIT2":
+			case "sit2":
 				if (tilEnv.equalsIgnoreCase("SUP02")) {
 					properties.setProperty("subscription", "447386011953");
 					properties.setProperty("baseUrl", "https://mvax-sit2.newvoe.eu");
@@ -166,7 +166,7 @@ public class CofigFileReader {
 				}
 
 				break;
-			case "DEV":
+			case "dev":
 				if (tilEnv.equalsIgnoreCase("SUP02")) {
 					properties.setProperty("subscription", "447386011953");
 					properties.setProperty("baseUrl", "https://mvax.dx-dev.digital.vodafoneaws.co.uk");
