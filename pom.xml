@@ -82,6 +82,52 @@
                           </fileSets>
                        </configuration>
                    </execution>
+                   	<execution>
+						<id>Report Generation1</id>
+						<phase>test</phase>
+						<goals>
+							<goal>send-mail</goal>
+						</goals>
+						<inherited>true</inherited>
+						<configuration>
+							<!-- From Email address -->
+							<from>salma.abokamla010@gmail.com</from>
+							<!-- Email subject -->
+							<subject>MVA10 APIs Status</subject>
+							<!-- Fail the build if the mail doesn't reach -->
+							<failonerror>false</failonerror>
+							<!-- Email Body Content -->
+							<htmlMessage>
+                                    <![CDATA[
+                                     <p>Check Status for MVA10 APIs</p>
+                                    ]]>
+							</htmlMessage>
+							<!-- host -->
+							<mailhost>smtp.gmail.com</mailhost>
+							<!-- port of the host -->
+							<mailport>465</mailport>
+							<mailssl>true</mailssl>
+							<mailAltConfig>true</mailAltConfig>
+							<!-- Email Authentication(Username and Password) -->
+							<mailuser>salma.abokamla010@gmail.com</mailuser>
+							<mailpassword>soebtbzdarawwodu</mailpassword>
+							<receivers>
+								<!-- To Email address -->
+								<receiver>f9j1i2k3k1u3w0t0@vfuk-digital.slack.com</receiver>
+
+							</receivers>
+							<fileSets>
+								<fileSet>
+									<!-- Report directory Path -->
+									<directory>test-output/html</directory>
+									<includes>
+										<!-- Report file name -->
+										<include>Extent.html</include>
+									</includes>
+								</fileSet>
+							</fileSets>
+						</configuration>
+					</execution>
                 </executions>
          </plugin>
 		 <plugin>
