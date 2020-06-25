@@ -37,11 +37,11 @@ public class CofigFileReader {
 
 	public static void setDeploymentEnv() {
 		readProperityFile();
-		appEnv = properties.getProperty("appEnv");
+		deploymentEnv= properties.getProperty("deploymentEnv");
 		tilEnv = properties.getProperty("tilEnv");
 		try (OutputStream outputStream = new FileOutputStream(propertyFilePath)) {
 
-			switch (appEnv) {
+			switch (deploymentEnv) {
 			case "INT1":
 				if (tilEnv.equalsIgnoreCase("SUP02")) {
 					properties.setProperty("subscription", "447386011953");
