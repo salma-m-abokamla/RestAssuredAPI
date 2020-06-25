@@ -25,6 +25,8 @@ steps:
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
+    testRunner: VSTest
+    testResultsFiles: '**/*.trx'
     failTaskOnFailedTests: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'test'
