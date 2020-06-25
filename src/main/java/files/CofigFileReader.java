@@ -10,7 +10,7 @@ import java.io.OutputStream;
 import java.util.Properties;
 
 public class CofigFileReader {
-	public static String appEnv;
+	public static String deploymentEnv;
 	public static String tilEnv;
 
 	public static Properties properties;
