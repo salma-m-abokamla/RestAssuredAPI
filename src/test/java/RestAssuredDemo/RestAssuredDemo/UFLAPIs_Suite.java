@@ -1,36 +1,26 @@
 package RestAssuredDemo.RestAssuredDemo;
 
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
-
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.testng.Assert;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
-
+import com.apitesting.enums.UFLAPIS;
 import com.apitesting.listners.BaseClass;
 import com.apitesting.listners.ExtentTestManager;
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.apitesting.uploader.VSTSFileUploader;
 import com.relevantcodes.extentreports.LogStatus;
-
-import files.CofigFileReader;
+import files.ConfigFileReader;
 import files.ReUsableMethods;
 import files.ResourceUrls;
 import files.payload;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
+import org.eclipse.jgit.api.errors.GitAPIException;
+import org.testng.ITestContext;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Test;
+
+import java.io.IOException;
+import java.net.MalformedURLException;
+
+import static io.restassured.RestAssured.given;
 
 public class UFLAPIs_Suite extends BaseClass {
 
@@ -55,10 +45,10 @@ public class UFLAPIs_Suite extends BaseClass {
 	
     @BeforeSuite
 	public void beforeSuite() {
-		CofigFileReader.setDeploymentEnv();
-		baseURL=CofigFileReader.getBaseUrl();
-		subscription=CofigFileReader.getSubscriprion();
-		userName=CofigFileReader.getUserName();
+		ConfigFileReader.setDeploymentEnv();
+		baseURL= ConfigFileReader.getBaseUrl();
+		subscription= ConfigFileReader.getSubscriprion();
+		userName= ConfigFileReader.getUserName();
 		
 			}
 	@Test(priority = 1)
@@ -67,17 +57,19 @@ public class UFLAPIs_Suite extends BaseClass {
 		ReUsableMethods.generateExtentReport();
 		RestAssured.baseURI = baseURL;
 		registeredNumbersResoureURL=ResourceUrls.registeredNumbersResoureURL;
-		
-		String responce = given().log().all().headers(ReUsableMethods.generalHeaders(subscription))
+
+		String response = given().log().all().headers(ReUsableMethods.generalHeaders(subscription))
 				.header("Parent-Subscription", subscription).header("Content-type", "application/json")
 				.body(payload.passwordLoginBody(userName)).when().post(registeredNumbersResoureURL).then().log().all()
 				.assertThat().statusCode(200).extract().response().asString();
-		JsonPath js1 = ReUsableMethods.rawToJson(responce);
+		JsonPath js1 = ReUsableMethods.rawToJson(response);
 		registeredNumberId = js1.getString("numbers[0].id");
 		authTokenL2=js1.getString("authToken");
-		
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
+
+		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + response);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+		
+		VSTSFileUploader.addResponseContentToUploadableFile(response, UFLAPIS.REGISTERED_NUMBERS.getName());
 
 	}
 	@Test(priority = 2)
@@ -86,15 +78,18 @@ public class UFLAPIs_Suite extends BaseClass {
 		ReUsableMethods.generateExtentReport();
 		RestAssured.baseURI = baseURL;
 
-		String responce = given().log().all().headers(ReUsableMethods.generalHeaders(subscription))
+		String response = given().log().all().headers(ReUsableMethods.generalHeaders(subscription))
 				.header("Parent-Subscription", subscription)
 				.header("registeredNumberId",registeredNumberId )
 				.header("authTokenL2", authTokenL2)
 				.when().get(ResourceUrls.sendOTACResoureURL).then().log().all().assertThat().statusCode(200).extract().response()
 				.asString();
 
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
+		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + response);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+
+		VSTSFileUploader.addResponseContentToUploadableFile(response, UFLAPIS.SEND_OTAC.getName());
+
 
 	}
 	@Test(priority = 3)
@@ -103,7 +98,7 @@ public class UFLAPIs_Suite extends BaseClass {
 		ReUsableMethods.generateExtentReport();
 		RestAssured.baseURI = baseURL;
 
-		String responce = given().log().all().headers(ReUsableMethods.generalHeaders(subscription))
+		String response = given().log().all().headers(ReUsableMethods.generalHeaders(subscription))
 				.header("Parent-Subscription", subscription)
 				.header("registeredNumberId",registeredNumberId )
 				.header("authTokenL2", authTokenL2)
@@ -111,7 +106,7 @@ public class UFLAPIs_Suite extends BaseClass {
 				.when()
 				.get(ResourceUrls.accountsResoureURL).then().log().all().assertThat().statusCode(200).extract().response()
 				.asString();
-		JsonPath js1 = ReUsableMethods.rawToJson(responce);
+		JsonPath js1 = ReUsableMethods.rawToJson(response);
 		accountType = js1.getString("accounts[0].accountType");
 		accountIdHash = js1.getString("accounts[0].accountIdHash");
 		accountId = js1.getString("accounts[0].accountId");
@@ -121,8 +116,10 @@ public class UFLAPIs_Suite extends BaseClass {
 		System.out.println("accountIdHash" + accountIdHash);
 		System.out.println("accountId" + accountId);
 
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
+		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + response);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+
+		VSTSFileUploader.addResponseContentToUploadableFile(response, UFLAPIS.GET_ACCOUNTS.getName());
 
 	}
 
@@ -133,22 +130,24 @@ public class UFLAPIs_Suite extends BaseClass {
 		ReUsableMethods.generateExtentReport();
 		RestAssured.baseURI = baseURL;
 
-		String responce = given().log().all().headers(ReUsableMethods.generalHeaders(subscription))
+		String response = given().log().all().headers(ReUsableMethods.generalHeaders(subscription))
 				.header("authTokenL3", authTokenL3).header("Parent-Subscription", subscription)
 				.header("accountIdHash", accountIdHash).header("accountType", accountType)
 				.when()
 				.get(ResourceUrls.accountsResoureURL.concat("/{accountId}").concat("/subscriptions"), accountId).then().log().all()
 				.assertThat().statusCode(200).extract().response().asString();
-		
-		JsonPath js1 = ReUsableMethods.rawToJson(responce);
+
+		JsonPath js1 = ReUsableMethods.rawToJson(response);
 		msisdnHash=js1.getString("subscriptions[0].msisdnHash");
 		subscriptionType=js1.getString("subscriptions[0].subscriptionType.name");
 		segment=js1.getString("subscriptions[0].segment");
-		
+
 		System.out.println("msisdnHash: "+msisdnHash);
-		
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
+
+		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + response);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+
+		VSTSFileUploader.addResponseContentToUploadableFile(response, UFLAPIS.GET_SUBSCRIPTIONS_LIST.getName());
 
 	}
 
@@ -159,7 +158,7 @@ public class UFLAPIs_Suite extends BaseClass {
 		ReUsableMethods.generateExtentReport();
 		RestAssured.baseURI = baseURL;
 
-		String responce = given().log().all().headers(ReUsableMethods.generalHeaders(subscription))
+		String response = given().log().all().headers(ReUsableMethods.generalHeaders(subscription))
 				.header("authTokenL3", authTokenL3).header("Parent-Subscription", subscription)
 				.header("accountIdHash", accountIdHash)
 				.header("accountId", accountId)
@@ -167,11 +166,25 @@ public class UFLAPIs_Suite extends BaseClass {
 				.header("subscriptionIdHash",msisdnHash )
 				.body("").when().post(ResourceUrls.upfrontLoginResoureURL).then().log().all().assertThat().statusCode(200).extract()
 				.response().asString();
-		JsonPath js1 = ReUsableMethods.rawToJson(responce);
+		JsonPath js1 = ReUsableMethods.rawToJson(response);
 		accessTokenL3=js1.getString("accessTokenL3");
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
+		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + response);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
 
+		VSTSFileUploader.addResponseContentToUploadableFile(response, UFLAPIS.UPFORNT_LOGIN.getName());
+
+	}
+
+	//uploading the files will be done here
+	@AfterSuite
+	protected void uploadTheFiles(ITestContext result) {
+		try {
+			VSTSFileUploader.pushToRemote("UFLAPIs");
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (GitAPIException e) {
+			e.printStackTrace();
+		}
 	}
 
 	/*@Test(priority = 6)
@@ -180,7 +193,7 @@ public class UFLAPIs_Suite extends BaseClass {
 		ReUsableMethods.generateExtentReport();
 		RestAssured.baseURI = baseURL;
 
-		String responce = given().log().all().headers(ReUsableMethods.generalHeaders(subscription))
+		String response = given().log().all().headers(ReUsableMethods.generalHeaders(subscription))
 				.header("Parent-Subscription", subscription)
 				.header("Access-Token-L3",accessTokenL3)
 				.header("Segment",segment)
@@ -190,7 +203,7 @@ public class UFLAPIs_Suite extends BaseClass {
 				.post(ResourceUrls.changePinResoureURL).then().log().all().assertThat().statusCode(200).extract().response()
 				.asString();
 
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
+		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + response);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
 
 	}*/
