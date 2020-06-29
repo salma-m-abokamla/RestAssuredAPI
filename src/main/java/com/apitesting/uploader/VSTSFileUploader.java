@@ -14,10 +14,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -41,7 +38,9 @@ public class VSTSFileUploader {
     private static final String REST_ASSURED_PASSWORD = "itsvs3eymvbgjl4ldn4evp6uiml7dk4jgdarypjanjt7yb3sxboq";
 
     public static void addResponseContentToUploadableFile(String fileContent, String apiName) {
-        System.out.println("ApiName:"+apiName);
+
+        System.out.println("Api name:"+apiName);
+
         uploadableFileContent.append("  ").append(apiName).append(" : {\n");
 
         for (String s : fileContent.split("\n")) {
@@ -137,9 +136,9 @@ public class VSTSFileUploader {
                     sprintNumbers.add(Double.parseDouble(matcher.group(1)));
             }
 
-            Collections.sort(sprintNumbers);
+            sprintNumbers.sort(Comparator.comparing(Double::doubleValue, Comparator.reverseOrder()));
 
-            return !sprintNumbers.isEmpty() ? String.valueOf(sprintNumbers.get(sprintNumbers.size() - 1)) : "";
+            return !sprintNumbers.isEmpty() ? String.valueOf(sprintNumbers.get(0)) : "";
         }
     }
 

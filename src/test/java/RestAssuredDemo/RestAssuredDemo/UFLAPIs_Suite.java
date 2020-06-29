@@ -13,7 +13,7 @@ import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import org.eclipse.jgit.api.errors.GitAPIException;
 import org.testng.ITestContext;
-import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
@@ -176,7 +176,7 @@ public class UFLAPIs_Suite extends BaseClass {
 	}
 
 	//uploading the files will be done here
-	@AfterSuite
+	@AfterClass
 	protected void uploadTheFiles(ITestContext result) {
 		try {
 			VSTSFileUploader.pushToRemote("UFLAPIs");
