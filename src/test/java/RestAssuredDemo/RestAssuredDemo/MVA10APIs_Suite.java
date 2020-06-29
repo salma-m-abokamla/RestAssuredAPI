@@ -1,40 +1,27 @@
 package RestAssuredDemo.RestAssuredDemo;
 
-import static io.restassured.RestAssured.given;
-
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintStream;
-import java.net.MalformedURLException;
-
-import java.util.List;
-import java.util.logging.Logger;
-import java.io.PrintStream;
-
-import org.testng.TestListenerAdapter;
-import org.testng.TestNG;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
-import org.testng.collections.Lists;
-
+import com.apitesting.enums.MVA10APIS;
 import com.apitesting.listners.BaseClass;
 import com.apitesting.listners.ExtentTestManager;
-
+import com.apitesting.uploader.VSTSFileUploader;
 import com.relevantcodes.extentreports.LogStatus;
-
-import files.CofigFileReader;
+import files.ConfigFileReader;
 import files.ReUsableMethods;
 import files.ResourceUrls;
 import files.payload;
 import io.restassured.RestAssured;
-import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.builder.ResponseSpecBuilder;
-import io.restassured.config.LogConfig;
-import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
+import org.eclipse.jgit.api.errors.GitAPIException;
+import org.testng.ITestContext;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import java.io.IOException;
+import java.net.MalformedURLException;
+
+import static io.restassured.RestAssured.given;
 
 public class MVA10APIs_Suite extends BaseClass {
 	public static String softTokenResoureURL;
@@ -64,7 +51,7 @@ public class MVA10APIs_Suite extends BaseClass {
 	public static String sendOTACResoureURL;
 	public static String upfrontLoginResoureURL;
 
-	public static String hanSoloresponce;
+	public static String hanSoloResponse;
 	public static String mspHansoloToken;
 
 	public String backendJwtSoftToken;
@@ -78,23 +65,23 @@ public class MVA10APIs_Suite extends BaseClass {
 	public String registeredNumberId;
 	public String AcessTokenL3;
 	public String msisdnHash;
-	public String subsListsResponce;
+	public String subsListsresponse;
 	public String baseURL;
 	public String subscription;
 	public String userName;
 	public String tilEnv;
-	
+
 	@BeforeSuite
 	public void beforeSuite() {
-		CofigFileReader.setDeploymentEnv();
-		baseURL=CofigFileReader.getBaseUrl();
-		tilEnv=CofigFileReader.getTilEnv();
-		System.out.println("BaseUrl :"+baseURL);
-		System.out.println("TilEnv :"+tilEnv);
-		subscription=CofigFileReader.getSubscriprion();
-		userName=CofigFileReader.getUserName();
-		
-			}
+		ConfigFileReader.setDeploymentEnv();
+		baseURL = ConfigFileReader.getBaseUrl();
+		tilEnv = ConfigFileReader.getTilEnv();
+		System.out.println("BaseUrl :" + baseURL);
+		System.out.println("TilEnv :" + tilEnv);
+		subscription = ConfigFileReader.getSubscriprion();
+		userName = ConfigFileReader.getUserName();
+
+	}
 	
 	@Test (priority = 1)
 	public void AppConfig( ) {
@@ -103,15 +90,18 @@ public class MVA10APIs_Suite extends BaseClass {
 		ReUsableMethods.generateExtentReport();
 		RestAssured.baseURI = baseURL;
 
-		String responce = given().headers(ReUsableMethods.generalHeaders(subscription)).when().get(appConfigResoureURL)
+		String response = given().headers(ReUsableMethods.generalHeaders(subscription)).when().get(appConfigResoureURL)
 				.then().assertThat().statusCode(200).extract().response().asString();
-		
+
 		System.out.println("************************************");
-		System.out.println( "AppConfig Responce is \n" + responce);
+		System.out.println( "AppConfig response is \n" + response);
 		System.out.println("************************************");
 
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
+		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + response);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+
+		VSTSFileUploader.addResponseContentToUploadableFile(response, MVA10APIS.APP_CONFIG.getName());
+
 	}
 
 	@Test (priority = 2)
@@ -121,17 +111,19 @@ public class MVA10APIs_Suite extends BaseClass {
 		RestAssured.baseURI = baseURL;
 		hansoloResoureUR = ResourceUrls.hansoloResoureURL;
 
-		hanSoloresponce = given().headers(ReUsableMethods.generalHeaders(subscription)).when().get(hansoloResoureUR)
+		hanSoloResponse = given().headers(ReUsableMethods.generalHeaders(subscription)).when().get(hansoloResoureUR)
 				.then().assertThat().statusCode(200).extract().response().asString();
 
-		System.out.println("HanSolo Responce is \n" + hanSoloresponce  );
+		System.out.println("HanSolo response is \n" + hanSoloResponse);
 		System.out.println("************************************");
 
-		JsonPath js = ReUsableMethods.rawToJson(hanSoloresponce);
+		JsonPath js = ReUsableMethods.rawToJson(hanSoloResponse);
 		mspHansoloToken = js.getString("mspHansoloToken");
 
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + hanSoloresponce);
+		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + hanSoloResponse);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+
+		VSTSFileUploader.addResponseContentToUploadableFile(hanSoloResponse, MVA10APIS.HANS_SOLO.getName());
 
 	}
 
@@ -142,18 +134,20 @@ public class MVA10APIs_Suite extends BaseClass {
 		RestAssured.baseURI = baseURL;
 		softTokenResoureURL = ResourceUrls.softTokenResoureURL;
 
-		String responce = given().headers(ReUsableMethods.generalHeaders(subscription))
+		String response = given().headers(ReUsableMethods.generalHeaders(subscription))
 				.header("Msp-Hansolo-Token", mspHansoloToken).when().get(softTokenResoureURL).then().assertThat()
 				.statusCode(200).extract().response().asString();
 
-		System.out.println("SoftToken Responce is \n" + responce  );
+		System.out.println("SoftToken response is \n" + response  );
 		System.out.println("************************************");
 
-		JsonPath js = ReUsableMethods.rawToJson(responce);
+		JsonPath js = ReUsableMethods.rawToJson(response);
 		backendJwtSoftToken = js.getString("backendJwtSoftToken");
 	//	System.out.println("backendJwtSoftToken is: " + backendJwtSoftToken);
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
+		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + response);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+
+		VSTSFileUploader.addResponseContentToUploadableFile(hanSoloResponse, MVA10APIS.SOFT_TOKEN.getName());
 
 	}
 
@@ -164,24 +158,26 @@ public class MVA10APIs_Suite extends BaseClass {
 		RestAssured.baseURI = baseURL;
 		segmentResoureURL = ResourceUrls.segmentResoureURL;
 
-		String responce = given().headers(ReUsableMethods.generalHeaders(subscription))
+		String response = given().headers(ReUsableMethods.generalHeaders(subscription))
 				.header("JWT", backendJwtSoftToken).when().get(segmentResoureURL).then().assertThat()
 				.statusCode(200).extract().response().asString();
 
-		System.out.println("Segment Responce is \n" + responce  );
+		System.out.println("Segment response is \n" + response  );
 		System.out.println("************************************");
 
-		
-		JsonPath js = ReUsableMethods.rawToJson(responce);
+
+		JsonPath js = ReUsableMethods.rawToJson(response);
 		segment = js.getString("segment");
 		//System.out.println("Segment is :" + segment);
-		JsonPath js1 = ReUsableMethods.rawToJson(responce);
+		JsonPath js1 = ReUsableMethods.rawToJson(response);
 		subscriptionType = js1.getString("subscriptionType.name");
 
 		//System.out.println("SubscriptionType is :" + subscriptionType);
 
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
+		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + response);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+
+		VSTSFileUploader.addResponseContentToUploadableFile(hanSoloResponse, MVA10APIS.SEGMENT.getName());
 
 	}
 
@@ -192,15 +188,17 @@ public class MVA10APIs_Suite extends BaseClass {
 		RestAssured.baseURI = baseURL;
 		subsConfigResoureURL = ResourceUrls.subsConfigResoureURL;
 
-		String responce = given().headers(ReUsableMethods.generalHeaders(subscription))
+		String response = given().headers(ReUsableMethods.generalHeaders(subscription))
 				.header("JWT", backendJwtSoftToken).when().get(subsConfigResoureURL).then().assertThat()
 				.statusCode(200).extract().response().asString();
 
-		System.out.println("SubsConfigWithoutSegment Responce is \n" + responce  );
+		System.out.println("SubsConfigWithoutSegment response is \n" + response  );
 		System.out.println("************************************");
 
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
+		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + response);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+
+		VSTSFileUploader.addResponseContentToUploadableFile(hanSoloResponse, MVA10APIS.SUBS_CONFIG_WITHOUT_SEGMENT.getName());
 
 	}
 
@@ -211,17 +209,19 @@ public class MVA10APIs_Suite extends BaseClass {
 		RestAssured.baseURI = baseURL;
 		dashboardResoureURL = ResourceUrls.dashboardResoureURL;
 
-		String responce = given().headers(ReUsableMethods.generalHeaders(subscription))
+		String response = given().headers(ReUsableMethods.generalHeaders(subscription))
 				.header("Segment", segment).header("Subscription-Type", subscriptionType)
 				.header("JWT", backendJwtSoftToken).when().get(dashboardResoureURL).then().assertThat()
 				.statusCode(200).extract().response().asString();
 
-		System.out.println("Dashboard Responce is \n" + responce  );
+		System.out.println("Dashboard response is \n" + response  );
 		System.out.println("************************************");
 
-		
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
+
+		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + response);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+
+		VSTSFileUploader.addResponseContentToUploadableFile(hanSoloResponse, MVA10APIS.DASHBOARD.getName());
 
 	}
 
@@ -232,16 +232,18 @@ public class MVA10APIs_Suite extends BaseClass {
 		RestAssured.baseURI = baseURL;
 		subsConfigResoureURL = ResourceUrls.subsConfigResoureURL;
 
-		String responce = given().headers(ReUsableMethods.generalHeaders(subscription))
+		String response = given().headers(ReUsableMethods.generalHeaders(subscription))
 				.header("Segment", segment).header("Subscription-Type", subscriptionType)
 				.header("JWT", backendJwtSoftToken).when().get(subsConfigResoureURL).then().assertThat()
 				.statusCode(200).extract().response().asString();
 
-		System.out.println("SubsConfigWithSegment Responce is \n" + responce  );
+		System.out.println("SubsConfigWithSegment response is \n" + response  );
 		System.out.println("************************************");
 
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
+		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + response);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+
+		VSTSFileUploader.addResponseContentToUploadableFile(hanSoloResponse, MVA10APIS.SUBS_CONFIG_WITH_SEGMENT.getName());
 
 	}
 
@@ -252,18 +254,20 @@ public class MVA10APIs_Suite extends BaseClass {
 		RestAssured.baseURI = baseURL;
 		veryMeOffersResoureURL = ResourceUrls.veryMeOffersResoureURL;
 
-		String responce = given().queryParam("latitude", "0").queryParam("longitude", "0")
+		String response = given().queryParam("latitude", "0").queryParam("longitude", "0")
 				.queryParam("locationStatus", "denied").header("Segment", segment)
 				.header("Subscription-Type", subscriptionType).header("JWT", backendJwtSoftToken)
 				.headers(ReUsableMethods.generalHeaders(subscription)).when().get(veryMeOffersResoureURL).then()
 				.assertThat().statusCode(200).extract().response().asString();
 
-		System.out.println("VeryMe Responce is \n" + responce  );
+		System.out.println("VeryMe response is \n" + response  );
 		System.out.println("************************************");
 
-		
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
+
+		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + response);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+
+		VSTSFileUploader.addResponseContentToUploadableFile(hanSoloResponse, MVA10APIS.VERY_ME.getName());
 
 	}
 
@@ -274,17 +278,19 @@ public class MVA10APIs_Suite extends BaseClass {
 		RestAssured.baseURI = baseURL;
 		discoverResoureURL = ResourceUrls.discoverResoureURL;
 
-		String responce = given().headers(ReUsableMethods.generalHeaders(subscription))
+		String response = given().headers(ReUsableMethods.generalHeaders(subscription))
 				.header("Segment", segment).header("Subscription-Type", subscriptionType)
 				.header("JWT", backendJwtSoftToken).when().get(discoverResoureURL).then().assertThat()
 				.statusCode(200).extract().response().asString();
 
-		System.out.println("Discover Responce is \n" + responce  );
+		System.out.println("Discover response is \n" + response  );
 		System.out.println("************************************");
 
-		
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
+
+		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + response);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+
+		VSTSFileUploader.addResponseContentToUploadableFile(hanSoloResponse, MVA10APIS.DISCOVER.getName());
 
 	}
 
@@ -295,17 +301,19 @@ public class MVA10APIs_Suite extends BaseClass {
 		RestAssured.baseURI = baseURL;
 		productsAndServicesResoureURL = ResourceUrls.productsAndServicesResoureURL;
 
-		String responce = given().headers(ReUsableMethods.generalHeaders(subscription))
+		String response = given().headers(ReUsableMethods.generalHeaders(subscription))
 				.header("Segment", segment).header("Subscription-Type", subscriptionType)
 				.header("JWT", backendJwtSoftToken).when().get(productsAndServicesResoureURL).then()
 				.assertThat().statusCode(200).extract().response().asString();
 
-		System.out.println("ProductsAndServices Responce is \n" + responce  );
+		System.out.println("ProductsAndServices response is \n" + response  );
 		System.out.println("************************************");
 
-		
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
+
+		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + response);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+
+		VSTSFileUploader.addResponseContentToUploadableFile(hanSoloResponse, MVA10APIS.PRODUCTS_AND_SERVICES.getName());
 
 	}
 
@@ -316,17 +324,19 @@ public class MVA10APIs_Suite extends BaseClass {
 		RestAssured.baseURI = baseURL;
 		billHistoryResoureURL = ResourceUrls.billHistoryResoureURL;
 
-		String responce = given().headers(ReUsableMethods.generalHeaders(subscription))
+		String response = given().headers(ReUsableMethods.generalHeaders(subscription))
 				.header("Segment", segment).header("Subscription-Type", subscriptionType)
 				.header("JWT", backendJwtSoftToken).when().get(billHistoryResoureURL).then().assertThat()
 				.statusCode(200).extract().response().asString();
 
-		System.out.println("BillHistory Responce is \n" + responce  );
+		System.out.println("BillHistory response is \n" + response  );
 		System.out.println("************************************");
 
-		
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
+
+		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + response);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+
+		VSTSFileUploader.addResponseContentToUploadableFile(hanSoloResponse, MVA10APIS.BILL_HISTORY.getName());
 
 	}
 
@@ -337,17 +347,19 @@ public class MVA10APIs_Suite extends BaseClass {
 		RestAssured.baseURI = baseURL;
 		planResoureURL = ResourceUrls.planResoureURL;
 
-		String responce = given().headers(ReUsableMethods.generalHeaders(subscription))
+		String response = given().headers(ReUsableMethods.generalHeaders(subscription))
 				.header("Segment", segment).header("Subscription-Type", subscriptionType)
 				.header("JWT", backendJwtSoftToken).when().get(planResoureURL).then().assertThat()
 				.statusCode(200).extract().response().asString();
 
-		System.out.println("Plan Responce is \n" + responce  );
+		System.out.println("Plan response is \n" + response  );
 		System.out.println("************************************");
 
-		
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
+
+		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + response);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+
+		VSTSFileUploader.addResponseContentToUploadableFile(hanSoloResponse, MVA10APIS.PLAN.getName());
 
 	}
 
@@ -358,16 +370,18 @@ public class MVA10APIs_Suite extends BaseClass {
 		RestAssured.baseURI = baseURL;
 		usagesResoureURL = ResourceUrls.usagesResoureURL;
 
-		String responce = given().headers(ReUsableMethods.generalHeaders(subscription))
+		String response = given().headers(ReUsableMethods.generalHeaders(subscription))
 				.header("Segment", segment).header("Subscription-Type", subscriptionType)
 				.header("JWT", backendJwtSoftToken).when().get(usagesResoureURL).then().assertThat()
 				.statusCode(200).extract().response().asString();
 
-		System.out.println("Usages Responce is \n" + responce  );
+		System.out.println("Usages response is \n" + response  );
 		System.out.println("************************************");
 
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
+		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + response);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+
+		VSTSFileUploader.addResponseContentToUploadableFile(hanSoloResponse, MVA10APIS.USAGES.getName());
 
 	}
 
@@ -378,16 +392,18 @@ public class MVA10APIs_Suite extends BaseClass {
 		RestAssured.baseURI = baseURL;
 		extrasResoureURL = ResourceUrls.extrasResoureURL;
 
-		String responce = given().headers(ReUsableMethods.generalHeaders(subscription))
+		String response = given().headers(ReUsableMethods.generalHeaders(subscription))
 				.header("Segment", segment).header("Subscription-Type", subscriptionType)
 				.header("JWT", backendJwtSoftToken).when().get(extrasResoureURL).then().assertThat()
 				.statusCode(200).extract().response().asString();
 
-		System.out.println("Extras Responce is \n" + responce  );
+		System.out.println("Extras response is \n" + response  );
 		System.out.println("************************************");
 
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
+		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + response);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+
+		VSTSFileUploader.addResponseContentToUploadableFile(hanSoloResponse, MVA10APIS.EXTRAS.getName());
 
 	}
 
@@ -398,17 +414,19 @@ public class MVA10APIs_Suite extends BaseClass {
 		RestAssured.baseURI = baseURL;
 		currentChargesResoureURL = ResourceUrls.currentChargesResoureURL;
 
-		String responce = given().headers(ReUsableMethods.generalHeaders(subscription))
+		String response = given().headers(ReUsableMethods.generalHeaders(subscription))
 				.header("Segment", segment).header("Subscription-Type", subscriptionType)
 				.header("JWT", backendJwtSoftToken).when().get(currentChargesResoureURL).then().assertThat()
 				.statusCode(200).extract().response().asString();
 
-		System.out.println("CurrentCharges Responce is \n" + responce  );
+		System.out.println("CurrentCharges response is \n" + response  );
 		System.out.println("************************************");
 
-		
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
+
+		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + response);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+
+		VSTSFileUploader.addResponseContentToUploadableFile(hanSoloResponse, MVA10APIS.CURRENT_CHARGES.getName());
 
 	}
 
@@ -419,16 +437,18 @@ public class MVA10APIs_Suite extends BaseClass {
 		RestAssured.baseURI = baseURL;
 		additionalChargesResoureURL = ResourceUrls.additionalChargesResoureURL;
 
-		String responce = given().headers(ReUsableMethods.generalHeaders(subscription))
+		String response = given().headers(ReUsableMethods.generalHeaders(subscription))
 				.header("Segment", segment).header("Subscription-Type", subscriptionType)
 				.header("JWT", backendJwtSoftToken).when().get(additionalChargesResoureURL).then()
 				.assertThat().statusCode(200).extract().response().asString();
 
-		System.out.println("AdditionalCharges Responce is \n" + responce  );
+		System.out.println("AdditionalCharges response is \n" + response  );
 		System.out.println("************************************");
 
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
+		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + response);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+
+		VSTSFileUploader.addResponseContentToUploadableFile(hanSoloResponse, MVA10APIS.ADDITIONAL_CHARGES.getName());
 
 	}
 
@@ -439,16 +459,18 @@ public class MVA10APIs_Suite extends BaseClass {
 		RestAssured.baseURI = baseURL;
 		upgradesResoureURL = ResourceUrls.upgradesResoureURL;
 
-		String responce = given().headers(ReUsableMethods.generalHeaders(subscription))
+		String response = given().headers(ReUsableMethods.generalHeaders(subscription))
 				.header("Segment", segment).header("Subscription-Type", subscriptionType)
 				.header("JWT", backendJwtSoftToken).when().get(upgradesResoureURL).then().assertThat()
 				.statusCode(200).extract().response().asString();
 
-		System.out.println("Upgrades Responce is \n" + responce  );
+		System.out.println("Upgrades response is \n" + response  );
 		System.out.println("************************************");
 
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
+		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + response);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+
+		VSTSFileUploader.addResponseContentToUploadableFile(hanSoloResponse, MVA10APIS.UPGRADES.getName());
 
 	}
 
@@ -458,17 +480,19 @@ public class MVA10APIs_Suite extends BaseClass {
 		ReUsableMethods.generateExtentReport();
 		RestAssured.baseURI = baseURL;
 		vovResoureURL = ResourceUrls.vovResoureURL;
-		String responce = given().headers(ReUsableMethods.generalHeaders(subscription))
+		String response = given().headers(ReUsableMethods.generalHeaders(subscription))
 				.header("Segment", segment).header("Subscription-Type", subscriptionType)
 				.header("JWT", backendJwtSoftToken).when().get(vovResoureURL).then().assertThat()
 				.statusCode(200).extract().response().asString();
 
-		System.out.println("VOV Responce is \n" + responce  );
+		System.out.println("VOV response is \n" + response  );
 		System.out.println("************************************");
 
-		
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
+
+		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + response);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+
+		VSTSFileUploader.addResponseContentToUploadableFile(hanSoloResponse, MVA10APIS.VOV.getName());
 
 	}
 
@@ -478,25 +502,27 @@ public class MVA10APIs_Suite extends BaseClass {
 		ReUsableMethods.generateExtentReport();
 		RestAssured.baseURI = baseURL;
 		passwordLoginResoureURL = ResourceUrls.passwordLoginResoureURL;
-		String responce = given().headers(ReUsableMethods.generalHeaders(subscription))
+		String response = given().headers(ReUsableMethods.generalHeaders(subscription))
 				.header("Segment", segment).header("Subscription-Type", subscriptionType)
 				.header("Content-type", "application/json").header("JWT", backendJwtSoftToken)
 				.body(payload.passwordLoginBody(userName)).when().post(passwordLoginResoureURL).then()
 				.assertThat().statusCode(200).extract().response().asString();
 
-		System.out.println("PasswordLogin Responce is \n" + responce  );
+		System.out.println("PasswordLogin response is \n" + response  );
 		System.out.println("************************************");
 
-		
-		JsonPath js1 = ReUsableMethods.rawToJson(responce);
+
+		JsonPath js1 = ReUsableMethods.rawToJson(response);
 		encryptedUserName = js1.getString("username");
 		fullAccessToken = js1.getString("fullAccessToken");
 		accountId = js1.getString("accountId");
 
-	
+
 		//System.out.print("fullAccessToken:" + fullAccessToken);
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
+		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + response);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+
+		VSTSFileUploader.addResponseContentToUploadableFile(hanSoloResponse, MVA10APIS.PASSWORD_LOGIN.getName());
 
 	}
 
@@ -507,17 +533,17 @@ public class MVA10APIs_Suite extends BaseClass {
 		RestAssured.baseURI = baseURL;
 		accountsResoureURL = ResourceUrls.accountsResoureURL;
 
-		String responce = given().headers(ReUsableMethods.generalHeaders(subscription))
+		String response = given().headers(ReUsableMethods.generalHeaders(subscription))
 				.header("Segment", segment).header("Subscription-Type", subscriptionType)
 				.header("JWT", backendJwtSoftToken).header("Root-Full-Access-Token", fullAccessToken)
 				.header("accountId", accountId).header("Full-Access-Token", fullAccessToken).when()
 				.get(accountsResoureURL).then().assertThat().statusCode(200).extract().response()
 				.asString();
-		
-		System.out.println("GetAccounts Responce is \n" + responce  );
+
+		System.out.println("GetAccounts response is \n" + response  );
 		System.out.println("************************************");
 
-		JsonPath js1 = ReUsableMethods.rawToJson(responce);
+		JsonPath js1 = ReUsableMethods.rawToJson(response);
 		accountType = js1.getString("accounts[0].accountType");
 		accountIdHash = js1.getString("accounts[0].accountIdHash");
 		accountId = js1.getString("accounts[0].accountId");
@@ -526,8 +552,11 @@ public class MVA10APIs_Suite extends BaseClass {
 		System.out.println("accountIdHash" + accountIdHash);
 		System.out.println("accountId" + accountId);
 
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
+		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + response);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+
+		VSTSFileUploader.addResponseContentToUploadableFile(hanSoloResponse, MVA10APIS.GET_ACCOUNTS.getName());
+
 
 	}
 
@@ -539,7 +568,7 @@ public class MVA10APIs_Suite extends BaseClass {
 		RestAssured.baseURI = baseURL;
 		accountsResoureURL = ResourceUrls.accountsResoureURL;
 
-		subsListsResponce = given().headers(ReUsableMethods.generalHeaders(subscription))
+		subsListsresponse = given().headers(ReUsableMethods.generalHeaders(subscription))
 				.header("Full-Access-Token", fullAccessToken).header("JWT", backendJwtSoftToken)
 				.header("Parent-Subscription", subscription).header("accountIdHash", accountIdHash)
 				.header("accountType", accountType).header("Parent-Subscription-Type", subscriptionType)
@@ -548,12 +577,14 @@ public class MVA10APIs_Suite extends BaseClass {
 				.get(accountsResoureURL.concat("/{accountId}").concat("/subscriptions"), accountId).then()
 				.assertThat().statusCode(200).extract().response().asString();
 
-		System.out.println("GetSubscriptionsList Responce is \n" + subsListsResponce  );
+		System.out.println("GetSubscriptionsList response is \n" + subsListsresponse  );
 		System.out.println("************************************");
 
-		
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + subsListsResponce);
+
+		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + subsListsresponse);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+
+		VSTSFileUploader.addResponseContentToUploadableFile(hanSoloResponse, MVA10APIS.GET_SUBSCRIPTION_LIST.getName());
 
 	}
 
@@ -565,24 +596,39 @@ public class MVA10APIs_Suite extends BaseClass {
 		RestAssured.baseURI = baseURL;
 		subscriptionSwitchResoureURL = ResourceUrls.subscriptionSwitchResoureURL;
 
-		String responce = given().headers(ReUsableMethods.generalHeaders(subscription))
+		String response = given().headers(ReUsableMethods.generalHeaders(subscription))
 				.header("Full-Access-Token", fullAccessToken).header("JWT", backendJwtSoftToken)
 				.header("Parent-Subscription", subscription).header("accountIdHash", accountIdHash)
 				.header("Parent-Subscription-Type", subscriptionType).header("Segment", segment)
 				.header("accountId", accountId).when().header("Subscription-Type", subscriptionType)
-				.header("msisdnHash", ReUsableMethod.returnMsisdnHashValue(subsListsResponce, subscription))
+				.header("msisdnHash", ReUsableMethod.returnMsisdnHashValue(subsListsresponse, subscription))
 				.header("Root-Full-Access-Token", fullAccessToken).header("msisdn", subscription)
 
 				.get(subscriptionSwitchResoureURL).then().assertThat().statusCode(200).extract().response()
 				.asString();
-		
-		System.out.println("SubscriptionSwitch Responce is \n" + subsListsResponce  );
+
+		System.out.println("SubscriptionSwitch response is \n" + subsListsresponse  );
 		System.out.println("************************************");
 
-		
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
+
+		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + response);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
 
+		VSTSFileUploader.addResponseContentToUploadableFile(hanSoloResponse, MVA10APIS.SUBSCRIPTION_SWITCH.getName());
+
+	}
+
+
+	//uploading the files will be done here
+	@AfterSuite
+	protected void uploadTheFiles(ITestContext result) {
+		try {
+			VSTSFileUploader.pushToRemote("MVA10APIs");
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (GitAPIException e) {
+			e.printStackTrace();
+		}
 	}
 
 	/*@Parameters({ "baseURL", "changePinResoureURL", "subscription", "userName" })
@@ -593,7 +639,7 @@ public class MVA10APIs_Suite extends BaseClass {
 		ReUsableMethods.generateExtentReport();
 		RestAssured.baseURI = baseURL;
 
-		String responce = given().headers(ReUsableMethods.generalHeaders(subscription))
+		String response = given().headers(ReUsableMethods.generalHeaders(subscription))
 				.header("Segment", segment).header("Subscription-Type", subscriptionType)
 				.header("Content-type", "application/json").header("JWT", backendJwtSoftToken)
 				.header("Parent-Subscription", subscription).header("Parent-Subscription-Type", subscriptionType)
@@ -601,10 +647,10 @@ public class MVA10APIs_Suite extends BaseClass {
 				.post(changePinResoureURL).then().assertThat().statusCode(200).extract().response()
 				.asString();
 
-		System.out.println("ChangePin Responce is \n" + responce  );
+		System.out.println("ChangePin response is \n" + response  );
 
-		
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
+
+		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + response);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
 
 	}
@@ -617,17 +663,17 @@ public class MVA10APIs_Suite extends BaseClass {
 		ReUsableMethods.generateExtentReport();
 		RestAssured.baseURI = baseURL;
 
-		String responce = given().log().all().headers(ReUsableMethods.generalHeaders(subscription))
+		String response = given().log().all().headers(ReUsableMethods.generalHeaders(subscription))
 				.header("JWT", backendJwtSoftToken).header("Parent-Subscription", subscription)
 				.header("Parent-Subscription-Type", Segment.subscriptionType).header("Segment", segment)
 				.header("Subscription-Type", subscriptionType).header("Content-type", "application/json")
 				.body(payload.resetPasswordBody(userName)).when().post(resetPasswordResoureURL).then().log().all()
 				.assertThat().statusCode(200).extract().response().asString();
 
-		System.out.println("RestPassword Responce is \n" + responce  );
+		System.out.println("RestPassword response is \n" + response  );
 
-		
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
+
+		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + response);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
 
 	}

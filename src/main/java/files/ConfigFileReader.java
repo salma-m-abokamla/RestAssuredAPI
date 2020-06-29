@@ -9,8 +9,8 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Properties;
 
-public class CofigFileReader {
-	public static String deploymentEnv;
+public class ConfigFileReader {
+	public static String appEnv;
 	public static String tilEnv;
 
 	public static Properties properties;
