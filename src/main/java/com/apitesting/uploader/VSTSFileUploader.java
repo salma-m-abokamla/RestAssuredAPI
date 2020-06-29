@@ -72,7 +72,7 @@ public class VSTSFileUploader {
             Repository repository = git.getRepository();
             // get the directory path from the configuration file
             ConfigFileReader.readProperityFile();
-            String directoryPath = getLatestReleaseBranch() + "/" + ConfigFileReader.properties.getProperty("appEnv")
+            String directoryPath = getLatestReleaseBranch() + "/" + ConfigFileReader.properties.getProperty("deploymentEnv")
                     + "/" + ConfigFileReader.properties.getProperty("tilEnv");
             // check if the path exists and if not build it
             File theDir = buildDirectoryIfNotExists(repository, directoryPath);
