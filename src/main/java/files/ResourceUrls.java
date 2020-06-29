@@ -16,7 +16,7 @@ public class ResourceUrls {
 	public static final String usagesResoureURL = "/app/api/v1/usages";
 	public static final String extrasResoureURL = "/app/api/v1/extras";
 	public static final String changePinResoureURL = "/app/api/v1/changePin";
-	public static final String currentChargesResoureURL = "/app/api/v1/currentCharges";
+	public static final String currentChargesResoureURL = "/app/api/v1/charges";
 	public static final String additionalChargesResoureURL = "/app/api/v1/additionalCharges";
 	public static final String resetPasswordResoureURL = "/app/api/v1/resetPassword";
 	public static final String upgradesResoureURL = "/app/api/v1/upgrades";

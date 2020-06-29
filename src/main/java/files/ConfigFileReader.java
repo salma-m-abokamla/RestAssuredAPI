@@ -37,12 +37,12 @@ public class ConfigFileReader {
 
 	public static void setDeploymentEnv() {
 		readProperityFile();
-		appEnv = properties.getProperty("appEnv");
+		deploymentEnv= properties.getProperty("deploymentEnv");
 		tilEnv = properties.getProperty("tilEnv");
 		try (OutputStream outputStream = new FileOutputStream(propertyFilePath)) {
 
-			switch (appEnv) {
-			case "INT1":
+			switch (deploymentEnv) {
+			case "int1":
 				if (tilEnv.equalsIgnoreCase("SUP02")) {
 					properties.setProperty("subscription", "447386011953");
 					properties.setProperty("baseUrl", "https://mvax.dx-int1-common.digital.vodafoneaws.co.uk");
@@ -66,7 +66,7 @@ public class ConfigFileReader {
 					properties.load(new FileInputStream(propertyFilePath));
 				}
 				break;
-			case "QC1":
+			case "qc1":
 				if (tilEnv.equalsIgnoreCase("SUP02")) {
 					properties.setProperty("subscription", "447386011953");
 					properties.setProperty("baseUrl", "https://mvax.dx-qc1-common.digital.vodafoneaws.co.uk");
@@ -91,7 +91,32 @@ public class ConfigFileReader {
 				}
 
 				break;
-			case "SIT1":
+			case "dev1":
+				if (tilEnv.equalsIgnoreCase("SUP02")) {
+					properties.setProperty("subscription", "447386011953");
+					properties.setProperty("baseUrl", "https://mvax.dx-dev1-common.digital.vodafoneaws.co.uk");
+					properties.setProperty("userName", "DNU_S2_7000330528");
+					// store the values
+					properties.store(outputStream, null);
+					properties.load(new FileInputStream(propertyFilePath));
+				} else if (tilEnv.equalsIgnoreCase("E7")) {
+					properties.setProperty("subscription", "447389768879");
+					properties.setProperty("baseUrl", "https://mvax.dx-dev1-common.digital.vodafoneaws.co.uk");
+					properties.setProperty("userName", "DNU7000386844");
+					// store the values
+					properties.store(outputStream, null);
+					properties.load(new FileInputStream(propertyFilePath));
+				} else if (tilEnv.equalsIgnoreCase("E4")) {
+					properties.setProperty("subscription", "447387926001");
+					properties.setProperty("baseUrl", "https://mvax.dx-dev1-common.digital.vodafoneaws.co.uk");
+					properties.setProperty("userName", "MYVAR65_7000260567");
+					// store the values
+					properties.store(outputStream, null);
+					properties.load(new FileInputStream(propertyFilePath));
+				}
+
+				break;
+			case "sit1":
 				if (tilEnv.equalsIgnoreCase("SUP02")) {
 					properties.setProperty("subscription", "447386011953");
 					properties.setProperty("baseUrl", "https://mvax-sit1.newvoe.eu");
@@ -116,7 +141,7 @@ public class ConfigFileReader {
 				}
 
 				break;
-			case "SIT2":
+			case "sit2":
 				if (tilEnv.equalsIgnoreCase("SUP02")) {
 					properties.setProperty("subscription", "447386011953");
 					properties.setProperty("baseUrl", "https://mvax-sit2.newvoe.eu");
@@ -141,24 +166,24 @@ public class ConfigFileReader {
 				}
 
 				break;
-			case "DEV":
+			case "prodsup":
 				if (tilEnv.equalsIgnoreCase("SUP02")) {
 					properties.setProperty("subscription", "447386011953");
-					properties.setProperty("baseUrl", "https://mvax.dx-dev.digital.vodafoneaws.co.uk");
+					properties.setProperty("baseUrl", "https://mvax.dx-prodsup-common.digital.vodafoneaws.co.uk");
 					properties.setProperty("userName", "DNU_S2_7000330528");
 					// store the values
 					properties.store(outputStream, null);
 					properties.load(new FileInputStream(propertyFilePath));
 				} else if (tilEnv.equalsIgnoreCase("E7")) {
 					properties.setProperty("subscription", "447389768879");
-					properties.setProperty("baseUrl", "https://mvax.dx-dev.digital.vodafoneaws.co.uk");
+					properties.setProperty("baseUrl", "https://mvax.dx-prodsup-common.digital.vodafoneaws.co.uk");
 					properties.setProperty("userName", "DNU7000386844");
 					// store the values
 					properties.store(outputStream, null);
 					properties.load(new FileInputStream(propertyFilePath));
 				} else if (tilEnv.equalsIgnoreCase("E4")) {
 					properties.setProperty("subscription", "447387926001");
-					properties.setProperty("baseUrl", "https://mvax.dx-dev.digital.vodafoneaws.co.uk");
+					properties.setProperty("baseUrl", "https://mvax.dx-prodsup-common.digital.vodafoneaws.co.uk");
 					properties.setProperty("userName", "MYVAR65_7000260567");
 					// store the values
 					properties.store(outputStream, null);
