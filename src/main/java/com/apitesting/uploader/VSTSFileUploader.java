@@ -41,6 +41,7 @@ public class VSTSFileUploader {
     private static final String REST_ASSURED_PASSWORD = "itsvs3eymvbgjl4ldn4evp6uiml7dk4jgdarypjanjt7yb3sxboq";
 
     public static void addResponseContentToUploadableFile(String fileContent, String apiName) {
+        System.out.println("Api name:"+apiName);
         uploadableFileContent.append("  ").append(apiName).append(" : {\n");
 
         for (String s : fileContent.split("\n")) {
