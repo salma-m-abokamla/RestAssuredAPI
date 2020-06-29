@@ -14,9 +14,12 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static java.lang.System.out;
 
@@ -123,15 +126,21 @@ public class VSTSFileUploader {
 
             List<Ref> call = git.branchList().setListMode(ListBranchCommand.ListMode.ALL).call();
 
-            List<Double> listOfVersions = call.stream().map(ref -> Arrays.asList(ref.getName().split("/")))
-                    .map(array -> array.get(array.size() - 1))
-                    .filter(string -> string.split("_").length > 1)
-                    .map(string -> Arrays.asList(string.split("_")))
-                    .map(arrayList -> arrayList.stream().filter(string -> string.matches("([0-9]*\\.[0-9]+)")).findAny())
-                    .filter(optionalString -> optionalString.isPresent()).map(string -> string.get())
-                    .map(string -> Double.parseDouble(String.valueOf(string))).sorted().collect(Collectors.toList());
+            Pattern p = Pattern.compile("([0-9]*\\.[0-9]+)");   // the pattern to search for
 
-            return String.valueOf(listOfVersions.get(listOfVersions.size() - 1));
+            Matcher matcher;
+
+            List<Double> sprintNumbers = new ArrayList<>();
+
+            for (Ref ref : call) {
+                matcher = p.matcher(ref.getName());
+                if (matcher.find())
+                    sprintNumbers.add(Double.parseDouble(matcher.group(1)));
+            }
+
+            Collections.sort(sprintNumbers);
+
+            return !sprintNumbers.isEmpty() ? String.valueOf(sprintNumbers.get(sprintNumbers.size() - 1)) : "";
         }
     }
 
