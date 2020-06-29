@@ -13,10 +13,7 @@ import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import org.eclipse.jgit.api.errors.GitAPIException;
 import org.testng.ITestContext;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -620,7 +617,7 @@ public class MVA10APIs_Suite extends BaseClass {
 
 
 	//uploading the files will be done here
-	@AfterSuite
+	@AfterClass
 	protected void uploadTheFiles(ITestContext result) {
 		try {
 			VSTSFileUploader.pushToRemote("MVA10APIs");

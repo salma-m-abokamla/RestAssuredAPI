@@ -14,10 +14,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -137,9 +134,9 @@ public class VSTSFileUploader {
                     sprintNumbers.add(Double.parseDouble(matcher.group(1)));
             }
 
-            Collections.sort(sprintNumbers);
+            sprintNumbers.sort(Comparator.comparing(Double::doubleValue, Comparator.reverseOrder()));
 
-            return !sprintNumbers.isEmpty() ? String.valueOf(sprintNumbers.get(sprintNumbers.size() - 1)) : "";
+            return !sprintNumbers.isEmpty() ? String.valueOf(sprintNumbers.get(0)) : "";
         }
     }
 
