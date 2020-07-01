@@ -49,7 +49,7 @@ public class MVA10APIs_Suite2 extends BaseClass {
 			hanSoloresponce = given().headers(ReUsableMethods.generalHeaders(CofigFileReader.getSubscriprionSUP02()))
 					.when().get(hansoloResoureUR).then().assertThat().statusCode(200).log().all().extract().response().asString();
 		} catch (AssertionError e) {
-			String failureMessage = "INT11 environment on SUP02 is down";
+			String failureMessage = "INT1 environment on SUP02 is down";
 			System.out.println(failureMessage);
 		    Allure.addAttachment("Environment Status: ", failureMessage);
 			ExtentTestManager.getTest().log(LogStatus.INFO, failureMessage);
