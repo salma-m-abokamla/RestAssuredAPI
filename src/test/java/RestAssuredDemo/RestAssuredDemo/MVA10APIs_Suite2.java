@@ -221,16 +221,16 @@ public class MVA10APIs_Suite2 extends BaseClass {
 	}
 
 	@Test
-	public void DEV_Environment_SUP02() {
+	public void DEV1_Environment_SUP02() {
 
 		ReUsableMethods.generateExtentReport();
-		RestAssured.baseURI = CofigFileReader.getBaseUrlDEVSUP02();
+		RestAssured.baseURI = CofigFileReader.getBaseUrlDEV1SUP02();
 		hansoloResoureUR = ResourceUrls.hansoloResoureURL;
 		try {
 			hanSoloresponce = given().headers(ReUsableMethods.generalHeaders(CofigFileReader.getSubscriprionSUP02()))
 					.when().get(hansoloResoureUR).then().assertThat().statusCode(200).extract().response().asString();
 		} catch (AssertionError e) {
-			String failureMessage = "DEV environment on SUP02 is down";
+			String failureMessage = "DEV1 environment on SUP02 is down";
 			System.out.println(failureMessage);
 		    Allure.addAttachment("Environment Status: ", failureMessage);
 			ExtentTestManager.getTest().log(LogStatus.INFO, failureMessage);
@@ -250,7 +250,7 @@ public class MVA10APIs_Suite2 extends BaseClass {
 					.statusCode(200).extract().response().asString();
 		} catch (AssertionError e) {
 
-			String failureMessage = "DEV environment on SUP02 is down";
+			String failureMessage = "DEV1 environment on SUP02 is down";
 			System.out.println(failureMessage);
 		    Allure.addAttachment("Environment Status: ", failureMessage);
 
@@ -259,7 +259,7 @@ public class MVA10APIs_Suite2 extends BaseClass {
 			return;
 
 		}
-		String sucessMessage = "DEV environment on SUP02 is up and working fine";
+		String sucessMessage = "DEV1 environment on SUP02 is up and working fine";
 		System.out.println(sucessMessage);
 	    Allure.addAttachment("Environment Status: ", sucessMessage);
 		ExtentTestManager.getTest().log(LogStatus.INFO, sucessMessage);
