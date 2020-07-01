@@ -133,9 +133,9 @@ public class CofigFileReader {
 		return properties.getProperty("baseUrl.SIT2");
 
 	}
-	public static String getBaseUrlDEVSUP02() {
+	public static String getBaseUrlDEV1SUP02() {
 		readProperityFile();
-		return properties.getProperty("baseUrl.SIT2");
+		return properties.getProperty("baseUrl.DEV1");
 
 	}
 	
