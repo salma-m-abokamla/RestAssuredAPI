@@ -79,11 +79,18 @@
 							<receivers>
 								<!-- To Email address -->
 								<receiver>salma.elmetwally2@vodafone.com</receiver>
-								<receiver>MVAUKTest@internal.vodafone.com</receiver>
-								<receiver>mennatullah.elgohary1@vodafone.com</receiver>
-
-
-
+                               <receiver>mennatullah.elgohary1@vodafone.com</receiver>
+							   <receiver>aya.ahmed1@vodafone.com</receiver>
+                               <receiver>hatem.ragab1@vodafone.com</receiver>
+                               <receiver>nouran.zaher2@vodafone.com</receiver>
+                               <receiver>nourhan.eltorky1@vodafone.com</receiver>
+							   <receiver>mennatallah.youssefibrahim@vodafone.com</receiver>
+							   <receiver>anwar.abdellah1@vodafone.com</receiver>
+							   <receiver>yara.elsayedabdelaty@vodafone.com</receiver>
+							   <receiver>dalia.ali4@vodafone.com</receiver>
+							   <receiver>aya.mostafa@vodafone.com</receiver>
+							   <receiver>Aya.fahmy@vodafone.com</receiver>
+							   <receiver>alaa.ismail1@vodafone.com</receiver>
 							</receivers>
 							<fileSets>
 								<fileSet>
