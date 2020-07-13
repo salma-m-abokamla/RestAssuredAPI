@@ -20,9 +20,6 @@
 				<version>2.19.1</version>
 				<configuration>
 				        <testFailureIgnore>true</testFailureIgnore>
-				
-				                <forkedProcessExitTimeoutInSeconds>120</forkedProcessExitTimeoutInSeconds>
-				
 					<suiteXmlFiles>
 						<suiteXmlFile>testng.xml</suiteXmlFile>
 					</suiteXmlFiles>

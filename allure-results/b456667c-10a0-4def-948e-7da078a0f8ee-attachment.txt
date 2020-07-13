@@ -1,0 +1,1 @@
+QC1 environment on E7 is up and working fine

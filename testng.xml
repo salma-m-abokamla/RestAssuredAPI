@@ -2,12 +2,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="testBeforeSuite">
-
-
 	<test thread-count="5" name="Tes1">
 
 		<classes>
-			<class name="RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite2" />
+			<class name="RestAssuredDemo.RestAssuredDemo.RunnableClass" />
 		</classes>
 	</test> <!-- Test -->
 	

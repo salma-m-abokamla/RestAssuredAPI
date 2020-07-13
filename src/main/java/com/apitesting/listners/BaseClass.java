@@ -23,14 +23,7 @@ public abstract class BaseClass {
 
     public static ExtentHtmlReporter htmlReporter;
 
-	/**
-	 * 
-	 * @param method
-	 */
-	@BeforeMethod
-    public void beforeMethod(Method method) {
-        ExtentTestManager.startTest(method.getName());
-    }
+
 	@BeforeSuite
     public void beforeSuiteSetup() {
         String filepath = System.getProperty("user.dir");
@@ -56,7 +49,7 @@ public abstract class BaseClass {
             ExtentTestManager.getTest().log(LogStatus.PASS, "Test passed");
         }
         
-        ExtentManager.getReporter().endTest(ExtentTestManager.getTest());        
+        ExtentManager.getReporter().endTest(ExtentTestManager.getTest());
         ExtentManager.getReporter().flush();
     }
     
