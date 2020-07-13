@@ -171,6 +171,11 @@ public class ConfigFileReader extends BaseClass {
         return properties1.getProperty("baseURL.dev1");
 
     }
+    public static String getTilEnv(String envName) {
+        readProperityFile();
+        return properties1.getProperty(envName);
+
+    }
 
     public static String getQC1BaseUrl() {
         readProperityFile();
