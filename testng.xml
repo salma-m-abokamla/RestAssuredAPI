@@ -9,7 +9,12 @@
 		</classes>
 	</test> <!-- Test -->
 	
+    <test thread-count="5" name="UFLAPIs_Suite">
 
+		<classes>
+			<class name="RestAssuredDemo.RestAssuredDemo.UFLAPIs_Suite" />
+		</classes>
+	</test> <!-- Test -->
 	
 </suite> <!-- Suite -->
 
