@@ -1,7 +1,6 @@
 package RestAssuredDemo.RestAssuredDemo;
 
 import com.apitesting.enums.UFLAPIS;
-import com.apitesting.listners.BaseClass;
 import com.apitesting.listners.ExtentTestManager;
 import com.apitesting.uploader.VSTSFileUploader;
 import com.relevantcodes.extentreports.LogStatus;

@@ -16,7 +16,7 @@ import files.ReUsableMethods;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 
-public class HanSolo extends BaseClass{
+public class HanSolo{
 	public static String hanSoloresponce;
 	public static String mspHansoloToken;
 	public static String hansoloResoureURL;

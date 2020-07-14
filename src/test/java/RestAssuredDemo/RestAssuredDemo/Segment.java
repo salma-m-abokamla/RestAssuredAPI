@@ -16,7 +16,7 @@ import files.ReUsableMethods;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 
-public class Segment extends BaseClass {
+public class Segment {
 	public static String segment;
 	public static String subscriptionType;
 	public static String segmentResoureURL;

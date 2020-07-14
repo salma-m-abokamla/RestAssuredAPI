@@ -12,7 +12,7 @@ import io.restassured.path.json.JsonPath;
 
 import static io.restassured.RestAssured.given;
 
-public class UpfrontLogin extends BaseClass {
+public class UpfrontLogin {
     public static String accessTokenL3;
 
     public static void UpfrontLogin(String baseURL, String subscription) {

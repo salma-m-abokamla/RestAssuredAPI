@@ -16,7 +16,7 @@ import files.ReUsableMethods;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 
-public class SubscriptionSwitch extends BaseClass {
+public class SubscriptionSwitch {
 	public static String subscriptionSwitchResoureURL;
 
   public static void SubscriptionSwitch(String baseURL, String subscription)  {

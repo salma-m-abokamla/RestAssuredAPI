@@ -12,7 +12,7 @@ import io.restassured.path.json.JsonPath;
 
 import static io.restassured.RestAssured.given;
 
-public class GetAccountsUFL extends BaseClass {
+public class GetAccountsUFL {
     public static String accountType, accountIdHash, accountId, authTokenL3;
 
     public static void GetAccounts(String baseURL, String subscription) {

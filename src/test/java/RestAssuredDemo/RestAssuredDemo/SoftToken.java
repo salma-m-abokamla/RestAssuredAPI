@@ -16,7 +16,7 @@ import files.ReUsableMethods;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 
-public class SoftToken extends BaseClass {
+public class SoftToken {
 	public static String backendJwtSoftToken;
 	public static String softTokenResoureURL;
 	public static void SoftToken(String baseURL, String subscription) {

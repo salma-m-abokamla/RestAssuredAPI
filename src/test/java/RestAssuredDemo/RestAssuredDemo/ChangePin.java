@@ -16,7 +16,7 @@ import files.ReUsableMethods;
 import files.payload;
 import io.restassured.RestAssured;
 
-public class ChangePin extends BaseClass {
+public class ChangePin {
 	public static String changePinResourceURL;
 
 	public static void ChangePin(String baseURL, String subscription, String userName) {

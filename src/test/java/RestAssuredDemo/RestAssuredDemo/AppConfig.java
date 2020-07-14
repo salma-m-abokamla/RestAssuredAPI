@@ -15,7 +15,7 @@ import com.relevantcodes.extentreports.LogStatus;
 import files.ReUsableMethods;
 import io.restassured.RestAssured;
 
-public class AppConfig extends BaseClass {
+public class AppConfig {
 
 	public static String appConfigResoureURL;
 
