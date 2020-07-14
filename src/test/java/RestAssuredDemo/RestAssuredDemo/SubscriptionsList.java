@@ -4,6 +4,10 @@ import static io.restassured.RestAssured.given;
 
 import java.net.MalformedURLException;
 
+import com.apitesting.enums.MVA10APIS;
+import com.apitesting.uploader.VSTSFileUploader;
+import files.ResourceUrls;
+import org.apache.tools.ant.taskdefs.Get;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -15,34 +19,32 @@ import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 
 public class SubscriptionsList {
-	public static String msisdnHash;
-	@Parameters({ "baseURL", "accountsResoureURL", "subscription" })
-	@Test(priority = 21)
-	public void GetSubscriptionsList(String baseURL, String accountsResoureURL, String subscription)
-			throws MalformedURLException {
+    public static String accountsResoureURL, subsListsresponse;
 
-		ReUsableMethods.generateExtentReport();
-		RestAssured.baseURI = baseURL;
+    public static void GetSubscriptionsList(String baseURL, String subscription)
+            throws MalformedURLException {
 
-		String responce = given().log().all().headers(ReUsableMethods.generalHeaders(subscription))
-				.header("Full-Access-Token", PasswordLogin.fullAccessToken)
-				.header("JWT", SoftToken.backendJwtSoftToken)
-				.header("Parent-Subscription", subscription)
-				.header("accountIdHash", GetAccounts.accountIdHash)
-				.header("accountType", GetAccounts.accountType)
-				.header("Parent-Subscription-Type", Segment.subscriptionType)
-				.header("Segment", Segment.segment)
-				.header("Subscription-Type", Segment.subscriptionType)	
-				.header("Root-Full-Access-Token", PasswordLogin.fullAccessToken)
-				.when()
-				.get(accountsResoureURL.concat("/{accountId}").concat("/subscriptions"), GetAccounts.accountId).then().log().all()
-				.assertThat().statusCode(200).extract().response().asString();
-		
-		JsonPath js1 = ReUsableMethods.rawToJson(responce);
-		msisdnHash = js1.getString("subscriptions.msisdnHash");
-		
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+        ReUsableMethods.generateExtentReport();
+        RestAssured.baseURI = baseURL;
+        accountsResoureURL = ResourceUrls.accountsResoureURL;
 
-	}
+        subsListsresponse = given().headers(ReUsableMethods.generalHeaders(subscription))
+                .header("Full-Access-Token", PasswordLogin.fullAccessToken).header("JWT", SoftToken.backendJwtSoftToken)
+                .header("Parent-Subscription", subscription).header("accountIdHash", GetAccounts.accountIdHash)
+                .header("accountType", GetAccounts.accountType).header("Parent-Subscription-Type", Segment.subscriptionType)
+                .header("Segment", Segment.segment).header("Subscription-Type", Segment.subscriptionType)
+                .header("Root-Full-Access-Token", PasswordLogin.fullAccessToken).when()
+                .get(accountsResoureURL.concat("/{accountId}").concat("/subscriptions"), GetAccounts.accountId).then()
+                .assertThat().statusCode(200).extract().response().asString();
+
+        System.out.println("GetSubscriptionsList response is \n" + subsListsresponse);
+        System.out.println("************************************");
+
+
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + subsListsresponse);
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+
+        VSTSFileUploader.addResponseContentToUploadableFile(subsListsresponse, MVA10APIS.GET_SUBSCRIPTION_LIST.getName());
+
+    }
 }

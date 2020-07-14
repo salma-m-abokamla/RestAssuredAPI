@@ -6,9 +6,31 @@
       <class name="RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite">
         <methods>
           <include name="beforeMethod"/>
+          <include name="BillHistory"/>
+          <include name="Upgrades"/>
+          <include name="VeryMe"/>
+          <include name="uploadTheFiles"/>
+          <include name="Extras"/>
+          <include name="Segment"/>
+          <include name="SubsConfigWithSegment"/>
+          <include name="Dashboard"/>
+          <include name="ProductsAndServices"/>
+          <include name="HanSolo"/>
+          <include name="AdditionalCharges"/>
+          <include name="PasswordLogin"/>
           <include name="afterMethod"/>
-          <include name="VeryMe" invocation-numbers="0"/>
-          <include name="Dashboard" invocation-numbers="0"/>
+          <include name="Usages"/>
+          <include name="SoftToken"/>
+          <include name="GetAccounts"/>
+          <include name="AppConfig"/>
+          <include name="beforeSuite"/>
+          <include name="Plan"/>
+          <include name="Discover"/>
+          <include name="CurrentCharges"/>
+          <include name="GetSubscriptionsList"/>
+          <include name="SubsConfigWithoutSegment"/>
+          <include name="VOV"/>
+          <include name="SubscriptionSwitch"/>
         </methods>
       </class> <!-- RestAssuredDemo.RestAssuredDemo.MVA10APIs_Suite -->
     </classes>

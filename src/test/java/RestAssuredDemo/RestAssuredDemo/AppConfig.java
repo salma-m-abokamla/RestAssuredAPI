@@ -2,6 +2,9 @@ package RestAssuredDemo.RestAssuredDemo;
 
 import static io.restassured.RestAssured.given;
 
+import com.apitesting.enums.MVA10APIS;
+import com.apitesting.uploader.VSTSFileUploader;
+import files.ResourceUrls;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -13,20 +16,26 @@ import files.ReUsableMethods;
 import io.restassured.RestAssured;
 
 public class AppConfig extends BaseClass {
-	@SuppressWarnings("deprecation")
-	@Parameters({ "baseURL", "appConfigResoureURL", "subscription" })
-	@Test
-	public void  AppConfig(String baseURL, String appConfigResoureURL, String subscription) {
 
+	public static String appConfigResoureURL;
+
+	public static void  AppConfig(String baseURL,String subscription) {
+
+		appConfigResoureURL = ResourceUrls.appConfigResoureURL;
 		ReUsableMethods.generateExtentReport();
 		RestAssured.baseURI = baseURL;
 
-		String responce = given().log().all().headers(ReUsableMethods.generalHeaders(subscription)).when()
-				.get(appConfigResoureURL).then().log().all().assertThat().statusCode(200).extract().response()
-				.asString();
+		String response = given().headers(ReUsableMethods.generalHeaders(subscription)).when().get(appConfigResoureURL)
+				.then().assertThat().statusCode(200).extract().response().asString();
 
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
+		System.out.println("************************************");
+		System.out.println( "AppConfig response is \n" + response);
+		System.out.println("************************************");
+
+		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + response);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+
+		VSTSFileUploader.addResponseContentToUploadableFile(response, MVA10APIS.APP_CONFIG.getName());
 
 	}
 }

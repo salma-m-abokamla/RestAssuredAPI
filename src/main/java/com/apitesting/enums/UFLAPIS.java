@@ -8,6 +8,7 @@ public enum UFLAPIS {
     SEND_OTAC("SendOTAC"),
     GET_ACCOUNTS("GetAccounts"),
     GET_SUBSCRIPTIONS_LIST("GetSubscriptionsList"),
+    CHANGE_PIN("ChangePIN"),
     UPFORNT_LOGIN("UpFrontLogin");
 
     private UFLAPIS (String name) {

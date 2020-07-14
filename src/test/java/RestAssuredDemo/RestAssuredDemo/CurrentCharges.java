@@ -2,6 +2,9 @@ package RestAssuredDemo.RestAssuredDemo;
 
 import static io.restassured.RestAssured.given;
 
+import com.apitesting.enums.MVA10APIS;
+import com.apitesting.uploader.VSTSFileUploader;
+import files.ResourceUrls;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -12,20 +15,26 @@ import files.ReUsableMethods;
 import io.restassured.RestAssured;
 
 public class CurrentCharges {
-	@Parameters({ "baseURL", "currentChargesResoureURL", "subscription" })
-	@Test
-	public void CurrentCharges(String baseURL, String currentChargesResoureURL, String subscription) {
+	public static String currentChargesResoureURL;
+	public static void CurrentCharges(String baseURL, String subscription) {
 
 		ReUsableMethods.generateExtentReport();
 		RestAssured.baseURI = baseURL;
+		currentChargesResoureURL = ResourceUrls.currentChargesResoureURL;
 
-		String responce = given().log().all().headers(ReUsableMethods.generalHeaders(subscription))
+		String response = given().headers(ReUsableMethods.generalHeaders(subscription))
 				.header("Segment", Segment.segment).header("Subscription-Type", Segment.subscriptionType)
-				.header("JWT", SoftToken.backendJwtSoftToken).when().get(currentChargesResoureURL).then().log().all().assertThat()
+				.header("JWT", SoftToken.backendJwtSoftToken).when().get(currentChargesResoureURL).then().assertThat()
 				.statusCode(200).extract().response().asString();
 
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
+		System.out.println("CurrentCharges response is \n" + response);
+		System.out.println("************************************");
+
+
+		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + response);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+
+		VSTSFileUploader.addResponseContentToUploadableFile(response, MVA10APIS.CURRENT_CHARGES.getName());
 
 	}
 }

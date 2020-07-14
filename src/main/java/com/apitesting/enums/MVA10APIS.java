@@ -25,7 +25,9 @@ public enum MVA10APIS {
     PASSWORD_LOGIN("PasswordLogin"),
     GET_ACCOUNTS("GetAccounts"),
     GET_SUBSCRIPTION_LIST("GetSubscriptionsList"),
-    SUBSCRIPTION_SWITCH("SubscriptionSwitch");
+    SUBSCRIPTION_SWITCH("SubscriptionSwitch"),
+    RESET_PASSWORD("ResetPassword"),
+    CHANGE_PIN("ChangePin");
 
 
     private MVA10APIS(String name) {

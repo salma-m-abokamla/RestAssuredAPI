@@ -2,6 +2,9 @@ package RestAssuredDemo.RestAssuredDemo;
 
 import static io.restassured.RestAssured.given;
 
+import com.apitesting.enums.MVA10APIS;
+import com.apitesting.uploader.VSTSFileUploader;
+import files.ResourceUrls;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -14,31 +17,32 @@ import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 
 public class SubscriptionSwitch extends BaseClass {
-	@Parameters({ "baseURL", "subscriptionSwitchResoureURL", "subscription" })
+	public static String subscriptionSwitchResoureURL;
 
-  @Test
-  public void SubscriptionSwitch(String baseURL, String subscriptionSwitchResoureURL, String subscription)  {
+  public static void SubscriptionSwitch(String baseURL, String subscription)  {
 	  ReUsableMethods.generateExtentReport();
-		RestAssured.baseURI = baseURL;
+	  RestAssured.baseURI = baseURL;
+	  subscriptionSwitchResoureURL = ResourceUrls.subscriptionSwitchResoureURL;
 
-		String responce = given().log().all().headers(ReUsableMethods.generalHeaders(subscription))
-				.header("Full-Access-Token", PasswordLogin.fullAccessToken)
-				.header("JWT", SoftToken.backendJwtSoftToken)
-				.header("Parent-Subscription", subscription)
-				.header("accountIdHash", GetAccounts.accountIdHash)
-				.header("Parent-Subscription-Type", Segment.subscriptionType)
-				.header("Segment", Segment.segment)
-				.header("accountId", GetAccounts.accountId).when()
-				.header("Subscription-Type", Segment.subscriptionType)
-				.header("msisdnHash", SubscriptionsList.msisdnHash)
-				.header("Root-Full-Access-Token", PasswordLogin.fullAccessToken)
-				.header("msisdn", subscription)
-				.get(subscriptionSwitchResoureURL).then().log().all().assertThat().statusCode(200).extract().response()
-				.asString();
-		
+	  String response = given().headers(ReUsableMethods.generalHeaders(subscription))
+			  .header("Full-Access-Token", PasswordLogin.fullAccessToken).header("JWT", SoftToken.backendJwtSoftToken)
+			  .header("Parent-Subscription", subscription).header("accountIdHash", GetAccounts.accountIdHash)
+			  .header("Parent-Subscription-Type", Segment.subscriptionType).header("Segment", Segment.segment)
+			  .header("accountId", GetAccounts.accountId).when().header("Subscription-Type", Segment.subscriptionType)
+			  .header("msisdnHash", ReUsableMethod.returnMsisdnHashValue(SubscriptionsList.subsListsresponse, subscription))
+			  .header("Root-Full-Access-Token", PasswordLogin.fullAccessToken).header("msisdn", subscription)
 
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+			  .get(subscriptionSwitchResoureURL).then().assertThat().statusCode(200).extract().response()
+			  .asString();
+
+	  System.out.println("SubscriptionSwitch response is \n" + response);
+	  System.out.println("************************************");
+
+
+	  ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + response);
+	  ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+
+	  VSTSFileUploader.addResponseContentToUploadableFile(response, MVA10APIS.SUBSCRIPTION_SWITCH.getName());
   
   
   

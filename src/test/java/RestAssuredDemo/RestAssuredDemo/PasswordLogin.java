@@ -2,6 +2,9 @@ package RestAssuredDemo.RestAssuredDemo;
 
 import static io.restassured.RestAssured.given;
 
+import com.apitesting.enums.MVA10APIS;
+import com.apitesting.uploader.VSTSFileUploader;
+import files.ResourceUrls;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -14,30 +17,38 @@ import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 
 public class PasswordLogin {
-	public static String encryptedUserName;
-	public static String fullAccessToken;
-	public static String accountId;
-	@Parameters({ "baseURL", "passwordLoginResoureURL", "subscription", "userName" })
-	@Test(priority = 19)
-	public void PasswordLogin(String baseURL, String passwordLoginResoureURL, String subscription, String userName) {
+    public static String passwordLoginResoureURL;
+    public static String encryptedUserName;
+    public static String fullAccessToken;
+    public static String accountId;
 
-		ReUsableMethods.generateExtentReport();
-		RestAssured.baseURI = baseURL;
+    public static void PasswordLogin(String baseURL, String subscription, String userName) {
 
-		String responce = given().log().all().headers(ReUsableMethods.generalHeaders(subscription))
-				.header("Segment", Segment.segment).header("Subscription-Type", Segment.subscriptionType)
-				.header("Content-type", "application/json").header("JWT", SoftToken.backendJwtSoftToken)
-				.body(payload.passwordLoginBody(userName)).when().post(passwordLoginResoureURL).then().log().all()
-				.assertThat().statusCode(200).extract().response().asString();
 
-		JsonPath js1 = ReUsableMethods.rawToJson(responce);
-		encryptedUserName = js1.getString("username");
-		fullAccessToken = js1.getString("fullAccessToken");
-		accountId = js1.getString("accountId");
+        ReUsableMethods.generateExtentReport();
+        RestAssured.baseURI = baseURL;
+        passwordLoginResoureURL = ResourceUrls.passwordLoginResoureURL;
+        String response = given().headers(ReUsableMethods.generalHeaders(subscription))
+                .header("Segment", Segment.segment).header("Subscription-Type", Segment.subscriptionType)
+                .header("Content-type", "application/json").header("JWT", SoftToken.backendJwtSoftToken)
+                .body(payload.passwordLoginBody(userName)).when().post(passwordLoginResoureURL).then()
+                .assertThat().statusCode(200).extract().response().asString();
 
-		System.out.print("fullAccessToken:" + fullAccessToken);
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+        System.out.println("PasswordLogin response is \n" + response);
+        System.out.println("************************************");
 
-	}
+
+        JsonPath js1 = ReUsableMethods.rawToJson(response);
+        encryptedUserName = js1.getString("username");
+        fullAccessToken = js1.getString("fullAccessToken");
+        accountId = js1.getString("accountId");
+
+
+        //System.out.print("fullAccessToken:" + fullAccessToken);
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + response);
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+
+        VSTSFileUploader.addResponseContentToUploadableFile(response, MVA10APIS.PASSWORD_LOGIN.getName());
+
+    }
 }

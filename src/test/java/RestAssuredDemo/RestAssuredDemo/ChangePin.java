@@ -2,6 +2,9 @@ package RestAssuredDemo.RestAssuredDemo;
 
 import static io.restassured.RestAssured.given;
 
+import com.apitesting.enums.MVA10APIS;
+import com.apitesting.uploader.VSTSFileUploader;
+import files.ResourceUrls;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -14,25 +17,27 @@ import files.payload;
 import io.restassured.RestAssured;
 
 public class ChangePin extends BaseClass {
-	@Parameters({ "baseURL", "changePinResoureURL", "subscription", "userName" })
+	public static String changePinResourceURL;
 
-	@Test
-	public void ChangePin(String baseURL, String changePinResoureURL, String subscription, String userName) {
-
+	public static void ChangePin(String baseURL, String subscription, String userName) {
+		changePinResourceURL= ResourceUrls.changePinResoureURL;
 		ReUsableMethods.generateExtentReport();
 		RestAssured.baseURI = baseURL;
 
-		String responce = given().log().all().headers(ReUsableMethods.generalHeaders(subscription))
+		String response = given().headers(ReUsableMethods.generalHeaders(subscription))
 				.header("Segment", Segment.segment).header("Subscription-Type", Segment.subscriptionType)
 				.header("Content-type", "application/json").header("JWT", SoftToken.backendJwtSoftToken)
-				.header("Parent-Subscription", subscription)
-				.header("Parent-Subscription-Type", Segment.subscriptionType)
+				.header("Parent-Subscription", subscription).header("Parent-Subscription-Type", Segment.subscriptionType)
 				.header("Full-Access-Token", PasswordLogin.fullAccessToken).body(payload.changePinBody(userName)).when()
-				.post(changePinResoureURL).then().log().all().assertThat().statusCode(200).extract().response()
+				.post(changePinResourceURL).then().assertThat().statusCode(200).extract().response()
 				.asString();
 
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + responce);
+		System.out.println("ChangePin response is \n" + response  );
+
+
+		ExtentTestManager.getTest().log(LogStatus.INFO, "Response is : " + response);
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Verified the Status code successfully !!");
+		VSTSFileUploader.addResponseContentToUploadableFile(response, MVA10APIS.CHANGE_PIN.getName());
 
 	}
 }
